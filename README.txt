@@ -13,3 +13,5 @@ Aingty		    aingtyeung@yahoo.com      	    562-735-7936
 
 
 ROOM CHANGE!!!!! to VEC 405
+
+One Page Reflection on the Reading Given to us. Due two weeks from now.
