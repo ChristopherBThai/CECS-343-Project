@@ -6,7 +6,7 @@ CREATE TABLE Homeowner
     hPhoneNum   VARCHAR(10),
     hEmail      VARCHAR(20),
     houseType   VARCHAR(30),
-    CONSTRAINT  homeowner_PK PRIMARY KEY(hName, webID) 
+    CONSTRAINT  Homeowner_PK PRIMARY KEY(hName, webID) 
 );
 
 CREATE TABLE Business
@@ -16,14 +16,15 @@ CREATE TABLE Business
     bAddress    VARCHAR(60),
     bPhoneNum   VARCHAR(10),
     bEmail      VARCHAR(20),
-    CONSTRAINT  business_PK PRIMARY KEY(bName, webID)
+    CONSTRAINT  Business_PK PRIMARY KEY(bName, webID)
 );
 
-CREATE TABLE Homeowner_Service
+CREATE TABLE Home_Service
 (
     serviceNeed VARCHAR(15)     NOT NULL,
     hName       VARCHAR(20)     NOT NULL,
-    CONSTRAINT  Homeowner_Service_FK FOREIGN KEY(hName) REFERENCES Homeowner.hName,
-
+    serviceDate DATETIME,
+    CONSTRAINT  Home_Service_FK FOREIGN KEY(hName) REFERENCES Homeowner.hName,
+    CONSTRAINT  Home_Service_PK PRIMARY KEY(serviceNeed)
 );
 
