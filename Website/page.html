@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/javascript" src="scripts.js"></script>
     <title>eHandy</title>
   </head>
 
@@ -19,7 +20,9 @@
   </div>
 
   <div class="search-padding">
-    <input type="text" name="search-bar" class="search-bar" placeholder="Search">
+      <input type="text" name="search-bar" class="search-bar" placeholder="Search" onkeydown="search(this)">
   </div>
-
+    
+  <div id="display"></div>
+    
 </html>

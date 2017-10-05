@@ -22,6 +22,26 @@
     to{background-color:#f4e4cb;}
 }
 
+@keyframes fade-result-title{
+    from{
+        opacity: 0;
+        left: 20px;
+    }to{
+        opacity: 1;
+        left: 0px;
+    }
+}
+
+@keyframes extend-result-line{
+    from{
+        width: 0%;
+        background: linear-gradient(to right, rgba(120, 70, 70,1), rgba(120, 70, 70, 0));
+    }to{
+        width: 75%;
+        background: linear-gradient(to right, rgba(120, 70, 70,1), rgba(120, 70, 70, 0));
+    }
+}
+
 body {
     background-color:white;
     animation-name: fadecolor;
@@ -86,6 +106,30 @@ body {
     animation-delay: 1.5s;
     animation-name: fadein;
     animation-duration: 2s;
-    #animation-name: searchChange;
-    #animation-duration: 10s;
+}
+
+.result-title {
+    opacity: 0px;
+    color: rgb(120, 70, 70);
+    font-family: 'route';
+    font-size: 200%;
+    padding-bottom: 9px;
+    padding-top: 30px;
+    line-height: 50%;
+    position: relative;
+    animation-fill-mode: forwards;
+    animation-name: fade-result-title;
+    animation-duration: 1s;
+}
+
+.result-line {
+    width: 0%;
+    height: 1px;
+    background-color: rgb(120, 70, 70);
+    background: linear-gradient(to right, rgba(120, 70, 70,1), rgba(120, 70, 70, 0));
+    position: relative;
+    animation-fill-mode: forwards;
+    animation-name: extend-result-line;
+    animation-duration: 1s;
+        
 }
