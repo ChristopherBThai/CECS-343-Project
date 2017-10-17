@@ -1,10 +1,11 @@
-
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/* This portion is used to set up the Database Client. User will be asked
+	to present his/her Username and Password to connect to the Database.
+*/
 public class Database_Client {
     static String USER;
     static String PASS;
