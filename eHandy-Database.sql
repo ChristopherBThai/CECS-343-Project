@@ -1,55 +1,56 @@
 CREATE TABLE Homeowner
 (
     hName       VARCHAR(20)     NOT NULL,
-    webID       INT             NOT NUll,
+    hWebID      INT             NOT NUll,
+    hEmail      VARCHAR(20),
     hAddress    VARCHAR(60),
     hPhoneNum   VARCHAR(10),
-    hEmail      VARCHAR(20),
-    houseType   VARCHAR(30)
---     CONSTRAINT  Homeowner_PK PRIMARY KEY(hName, webID) 
+    CONSTRAINT  Homeowner_PK PRIMARY KEY(hWebID) 
 );
 
-ALTER TABLE Homeowner
-    ADD CONSTRAINT Homeowner_PK PRIMARY KEY (hName,webID);
+CREATE TABLE HouseType
+(
+    typeName    VARCHAR(20)     NOT NULL,
+    hWebID      INT             NOT NUll,
+    monthlyPay  FLOAT,
+    CONSTRAINT  Home_Type_FK FOREIGN KEY(hWebID) REFERENCES Homeowner(hWebID),
+    CONSTRAINT  Home_Type_PK PRIMARY KEY(typeName)
+);
 
 CREATE TABLE Business
 (
     bName       VARCHAR(20)     NOT NULL,
-    webID       INT             NOT NULL,
+    bWebID      INT             NOT NULL,
     bEmail      VARCHAR(20)     NOT NULL,
     bAddress    VARCHAR(60),
-    bPhoneNum   VARCHAR(10)
---     CONSTRAINT  Business_PK PRIMARY KEY(bName, webID)
+    bPhoneNum   VARCHAR(10),
+    CONSTRAINT  Business_PK PRIMARY KEY(bWebID)
 );
 
-ALTER TABLE Business
-    ADD CONSTRAINT Business_PK PRIMARY KEY (bName,webID);
-
-
-CREATE TABLE Home_Service
+CREATE TABLE BusinessType
 (
-    serviceNeed VARCHAR(15)     NOT NULL,
-    hName       VARCHAR(20)     NOT NULL,
-    web1ID      INT             NOT NULL,
-    serviceDate DATE            NOT NULL,
-    serviceLoc  VARCHAR(30),
-    CONSTRAINT  Home_Service_PK PRIMARY KEY(serviceNeed)
+    typeName    VARCHAR(20)     NOT NULL,
+    bWebID      INT             NOT NULL,       
+    typeRate    FLOAT,
+    CONSTRAINT  Business_Type_FK FOREIGN KEY(bWebID) REFERENCES Business(bWebID),
+    CONSTRAINT  Business_Type_PK PRIMARY KEY(typeName)
 );
 
-ALTER TABLE Home_Service   
-    ADD CONSTRAINT  Home_Service_FK FOREIGN KEY(hName,web1ID) REFERENCES Homeowner (hName, webID);
-
-
-CREATE TABLE Business_Service
+CREATE TABLE Review
 (
-    serviceType VARCHAR(15)     NOT NULL,
-    b1Name      VARCHAR(20)     NOT NULL,
-    web1ID      INT             NOT NULL,
-    serviceRate FLOAT           NOT NULL,
-    startDate   DATE,
-    CONSTRAINT  Business_Service_PK PRIMARY KEY(serviceType, serviceRate)
-   
+    dateReview  DATETIME        NOT NULL,
+    reviewStars INT             NOT NULL,
+    hWebID      INT             NOT NULL,
+    bWebID      INT             NOT NULL,
+    rAnonymous  VARCHAR(1),
+    CONSTRAINT  Review_Home_FK FOREIGN KEY(hWebID) REFERENCES Homeowner(hWebID),
+    CONSTRAINT  Review_Business_FK FOREIGN KEY(bWebID) REFERENCES Business(bWebID),
+    CONSTRAINT  Reieve_PK PRIMARY KEY(dateReview, reviewStars)  
 );
 
+<<<<<<< HEAD
 ALTER TABLE Business_Service
     ADD CONSTRAINT  Business_Service_FK FOREIGN KEY (b1Name,web1ID) REFERENCES Business (bName,webID);
+=======
+##### INSERTS HERE!!!! #####
+>>>>>>> 6ed573b98877e35b78b088dd8bf46f677f2e9dd8
