@@ -14,4 +14,15 @@ Aingty		    aingtyeung@yahoo.com      	    562-735-7936
 
 ROOM CHANGE!!!!! to VEC 405
 
-One Page Reflection on the Reading Given to us. Due two weeks from now.
+Todo: 
+ADD Rating 1-5 float to business table
+2 homeowners
+20 businesses per category
+Review Class
+         Take out service classes
+          Homeowners can see reviews they’ve left
+          Businesses can see their reviews
+     1..* with history. Homeowner can review many businesses,
+     Businesses can be reviewed by many homeowners
+Add business type attribute to Businesses (PK)
+
