@@ -84,3 +84,14 @@ function createResult(name,result){
 	button.appendChild(text);
 	div.appendChild(button);
 }
+
+function showLogin(){
+    document.getElementById('login').style.display='block';
+    document.getElementById('blurable').className = "blur"; 
+}
+
+function removeLogin(){
+    document.getElementById('login').style.display='none';
+    document.getElementById('blurable').className = "unblur"; 
+}
+
