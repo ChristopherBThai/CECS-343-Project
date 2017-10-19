@@ -101,3 +101,13 @@ function removeInfo(){
     document.getElementById('blurable').className = "unblur"; 
 }
 
+function showSignup(){
+    document.getElementById('signup').style.display='block';
+    document.getElementById('blurable').className = "blur"; 
+}
+
+function removeSignup(){
+    document.getElementById('signup').style.display='none';
+    document.getElementById('blurable').className = "unblur"; 
+}
+
