@@ -13,7 +13,7 @@
         <div class="btn-padding">
             <div class="btn-group">
                 <button onClick="showLogin()">Log in</button>
-                <button>Sign up</button>
+                <button onClick="showInfo()">Sign up</button>
             </div>
         </div>
 
@@ -44,4 +44,20 @@
             </div>
         </form>
     </div>
+
+    <div id="info" class="modal">
+        <span onclick="removeInfo()" class="close" title="Close Modal">&times;</span>
+		<form class="modal-content animate">
+            <div class="container">
+                <p><b id="infoName">James Smith</b></p>
+				<p><b>Phone Number: </b><a href="#" class="blur-info">(714)-371-1182</a></p>
+				<p><b>E-mail: </b><a href="#" class="blur-info">example@gmail.com</a></p>
+            </div> 
+            <div class="container" style="background-color:#f1f1f1">
+                <button class="formButton cancelbtn" type="button" onClick="removeInfo()">Close</button>
+                <button class="formButton cancelbtn" style="background-color:#2020f4" type="button" onClick="removeInfo()">Contact</button>
+            </div>
+        </form>
+    </div>
+
 </html>
