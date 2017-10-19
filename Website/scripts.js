@@ -75,6 +75,7 @@ function createResult(name,result){
 		divOuter.appendChild(div);
 	}
 	var button = document.createElement('button');
+	button.setAttribute('onClick',"showInfo()");
 	var text = document.createTextNode(result.name);
 	button.appendChild(text);
 	div.appendChild(button);
@@ -87,6 +88,16 @@ function showLogin(){
 
 function removeLogin(){
     document.getElementById('login').style.display='none';
+    document.getElementById('blurable').className = "unblur"; 
+}
+
+function showInfo(){
+    document.getElementById('info').style.display='block';
+    document.getElementById('blurable').className = "blur"; 
+}
+
+function removeInfo(){
+    document.getElementById('info').style.display='none';
     document.getElementById('blurable').className = "unblur"; 
 }
 

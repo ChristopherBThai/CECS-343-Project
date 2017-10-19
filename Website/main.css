@@ -38,17 +38,17 @@
         filter: url("blur.svg#gaussian_blur");
         -webkit-filter: blur(0px);
     }to{
-        filter: blur(3px);
+        filter: blur(2px);
         filter: url("blur.svg#gaussian_blur");
-        -webkit-filter: blur(3px);
+        -webkit-filter: blur(2px);
     }
 }
 
 @keyframes unblur-anim {
     from {
-        filter: blur(3px);
+        filter: blur(2px);
         filter: url("blur.svg#gaussian_blur");
-        -webkit-filter: blur(3px);
+        -webkit-filter: blur(2px);
     }to{
         filter: blur(0px);
         filter: url("blur.svg#gaussian_blur");
