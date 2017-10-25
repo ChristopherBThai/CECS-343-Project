@@ -3,23 +3,18 @@
 /* eslint no-unused-vars:0 */
 /* eslint no-unused-vars: "error" */
 
-
-function createText() {
-    var text = document.createTextNode("Hello World");
-    document.body.appendChild(text);
-}
-
 function search(ele){
     if(event.keyCode==13){
 		var group = new Group(ele.value,new Array(0));
-		group.list.push(new Result("TestName1","TestPhone","TestDesc"));
-		group.list.push(new Result("TestName2","TestPhone","TestDesc"));
-		group.list.push(new Result("TestName3","TestPhone","TestDesc"));
+        var rand = Math.floor(Math.random()*20)+1;
+        for(i=1;i<=rand;i++){
+    		group.list.push(new Result("TestName"+i,"TestPhone","TestDesc"));
+        }
         createGroupTitle(group.name);
         createGroupLine(group.name);
-		createResult(group.name,group.list[0]);
-		createResult(group.name,group.list[1]);
-		createResult(group.name,group.list[2]);
+        for(i=0;i<group.list.length;i++){
+            createResult(group.name,group.list[i]);
+        }
     }
 }
 
@@ -80,6 +75,7 @@ function createResult(name,result){
 		divOuter.appendChild(div);
 	}
 	var button = document.createElement('button');
+	button.setAttribute('onClick',"showInfo()");
 	var text = document.createTextNode(result.name);
 	button.appendChild(text);
 	div.appendChild(button);
@@ -92,6 +88,26 @@ function showLogin(){
 
 function removeLogin(){
     document.getElementById('login').style.display='none';
+    document.getElementById('blurable').className = "unblur"; 
+}
+
+function showInfo(){
+    document.getElementById('info').style.display='block';
+    document.getElementById('blurable').className = "blur"; 
+}
+
+function removeInfo(){
+    document.getElementById('info').style.display='none';
+    document.getElementById('blurable').className = "unblur"; 
+}
+
+function showSignup(){
+    document.getElementById('signup').style.display='block';
+    document.getElementById('blurable').className = "blur"; 
+}
+
+function removeSignup(){
+    document.getElementById('signup').style.display='none';
     document.getElementById('blurable').className = "unblur"; 
 }
 
