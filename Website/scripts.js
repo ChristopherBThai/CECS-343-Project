@@ -21,7 +21,7 @@ function search(ele){
 			}
 		};
 
-		xmlhttp.open("GET","test.php?q="+ele.value,true);
+		xmlhttp.open("GET","search.php?q="+ele.value,true);
 		xmlhttp.send();
 
     }

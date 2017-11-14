@@ -7,18 +7,16 @@
 	$password="jayden";
 	$dbname="eHandy";
 
-	echo '<script>CONSOLE.Log("Starting connection")</script>';
+	echo '<script>console.Log("Starting connection")</script>';
 
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	
 	echo '<script>console.log("Checking connection")</script>';
 	if($conn->connect_error){
-		echo "failed";
 		echo '<script>console.log("Connection failed")</script>';
 		die("Connection failed: ".$conn->connect_error);
 	}
 	
-	echo "success!";
 	echo '<script>console.log("Connection success!")</script>';
 
 	$sql = "SELECT * from Business";
