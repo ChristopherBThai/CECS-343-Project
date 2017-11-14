@@ -26,7 +26,7 @@
 
 	if($result->num_rows>0){
 		while($row = $result->fetch_assoc()){
-			echo '<script>console.log("'.$row["bName"].'")</script>';
+			echo '<script type="text/javascript">console.log("'.$row["bName"].'")</script>';
 		}
 	}else{
 		echo '<script>console.log("0 results")</script>';
