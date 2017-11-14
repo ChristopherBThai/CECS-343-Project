@@ -17,7 +17,7 @@ function search(ele){
 
 		xmlhttp.onreadystatechange = function(){
 			if(this.readyState == 4 && this.status == 200){
-
+				document.getElementById("phpScripts").innerHTML = this.responseText;
 			}
 		};
 
