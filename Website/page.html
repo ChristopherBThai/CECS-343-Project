@@ -1,25 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <title>eHandy</title>
-  </head>
+    <head>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" type="text/css" href="loginForm.css">
+        <link rel="stylesheet" type="text/css" href="result.css">
+        <script type="text/javascript" src="scripts.js"></script>
+        <title>eHandy</title>
+    </head>
 
-  <div class="btn-padding">
-    <div class="btn-group">
-      <button>Log in</button>
-      <button>Sign up</button>
+    <div class="" id="blurable">
+        <!-- Login Buttons -->
+        <div class="btn-padding">
+            <div class="btn-group">
+                <button onClick="showLogin()">Log in</button>
+                <button onClick="showSignup()">Sign up</button>
+            </div>
+        </div>
+
+        <div class="titlePadding" >
+            <a class="title">eHandy</a>
+        </div>
+
+        <div class="search-padding">
+            <input type="text" name="search-bar" class="search-bar" placeholder="Search" onkeydown="search(this)">
+        </div>
+    
+        <div id="display"></div>
     </div>
-  </div>
+  
+    <div id="login" class="modal">
+        <span onclick="removeLogin()" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+				<label><p><b style="font-size:150%;">Log in</b></p></label>
+                <label><b>Username</b></label>
+                <input class="formInput" type="text" placeholder="Enter Username" name="uname" required>
+                <label><b>Password</b></label>
+                <input class="formInput" type="password" placeholder="Enter Password" name="pws" requred>
+                <button class="formButton" type="submit">Login</button>
+            </div> 
+            <div class="container" style="background-color:#f1f1f1">
+                <button class="formButton cancelbtn" type="button" onClick="removeLogin()">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span> 
+            </div>
+        </form>
+    </div>
 
-  <div class="titlePadding" >
-    <a class="title">
-      eHandy
-    </a>
-  </div>
+    <div id="signup" class="modal">
+        <span onclick="removeSignup()" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+				<label><p><b style="font-size:150%;">Sign up</b></p></label>
+                <label><b>Username</b></label>
+                <input class="formInput" type="text" placeholder="Enter Username" name="uname" required>
+                <label><b>Password</b></label>
+                <input class="formInput" type="password" placeholder="Enter Password" name="pws" requred>
+                <button class="formButton" type="submit">Login</button>
+            </div> 
+            <div class="container" style="background-color:#f1f1f1">
+                <button class="formButton cancelbtn" type="button" onClick="removeSignup()">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span> 
+            </div>
+        </form>
+    </div>
 
-  <div class="search-padding">
-    <input type="text" name="search-bar" class="search-bar" placeholder="Search">
-  </div>
+    <div id="info" class="modal">
+        <span onclick="removeInfo()" class="close" title="Close Modal">&times;</span>
+		<form class="modal-content animate">
+            <div class="container">
+				<p><b style="font-size:150%;">PlumbingX Co.</b></p>
+                <p><b id="infoName">James Smith</b></p>
+				<p><b>Phone Number: </b><a href="#" class="blur-info">(714)-371-1182</a></p>
+				<p><b>E-mail: </b><a href="#" class="blur-info">example@gmail.com</a></p>
+            </div> 
+            <div class="container" style="background-color:#f1f1f1">
+                <button class="formButton cancelbtn" type="button" onClick="removeInfo()">Close</button>
+                <button class="formButton cancelbtn" style="background-color:#2020f4" type="button" onClick="removeInfo()">Contact</button>
+            </div>
+        </form>
+    </div>
 
 </html>

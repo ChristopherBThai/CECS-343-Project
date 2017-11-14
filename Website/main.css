@@ -22,10 +22,56 @@
     to{background-color:#f4e4cb;}
 }
 
+@keyframes fade-result-title{
+    from{
+        opacity: 0;
+        left: 20px;
+    }to{
+        opacity: 1;
+        left: 0px;
+    }
+}
+
+@keyframes blur-anim {
+    from {
+        filter: blur(0px);
+        filter: url("blur.svg#gaussian_blur");
+        -webkit-filter: blur(0px);
+    }to{
+        filter: blur(2px);
+        filter: url("blur.svg#gaussian_blur");
+        -webkit-filter: blur(2px);
+    }
+}
+
+@keyframes unblur-anim {
+    from {
+        filter: blur(2px);
+        filter: url("blur.svg#gaussian_blur");
+        -webkit-filter: blur(2px);
+    }to{
+        filter: blur(0px);
+        filter: url("blur.svg#gaussian_blur");
+        -webkit-filter: blur(0px);
+    }
+}
+
 body {
     background-color:white;
     animation-name: fadecolor;
     animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+.blur {
+    animation-name: blur-anim;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.unblur {
+    animation-name: unblur-anim;
+    animation-duration: .6s;
     animation-fill-mode: forwards;
 }
 
@@ -50,7 +96,7 @@ body {
 }
 
 .btn-group button:hover{
-    background-color: rgb(230,230,230);
+    background-color: rgb(180,180,180);
     border: 0px;
 }
 
@@ -86,6 +132,4 @@ body {
     animation-delay: 1.5s;
     animation-name: fadein;
     animation-duration: 2s;
-    #animation-name: searchChange;
-    #animation-duration: 10s;
 }
