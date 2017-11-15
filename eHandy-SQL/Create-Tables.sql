@@ -68,8 +68,7 @@ FROM Business ORDER BY bName;
 
 SELECT 
     typeName AS "Home Type", 
-    hWebID AS "ID", 
-    monthlyPay AS "Monthly Cost"
+    hWebID AS "ID"
 FROM HouseType ORDER BY typeName;
 
 SELECT 
