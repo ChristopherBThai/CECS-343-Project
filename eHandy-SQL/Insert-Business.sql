@@ -60,4 +60,5 @@ INSERT INTO Business(bName, bWebID, bEmail, bAddress, bPhoneNum) VALUES
 ('Payless',1168,'payless@stores.com','5782 Jarjar Ave. Yavin, WA 63287','5623453456'),
 ('Midterm',1169,'hardtest@school.com','5467 Exit Ln. Bespin, WA 56355','5622342345'),
 ('Gardenscapers',1170,'gardenscape@gmail.com','7182 Newberry Ave. Gotham, CA 32455','5621231234');
+
 -- End of Business Insertion --
