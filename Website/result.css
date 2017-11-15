@@ -10,7 +10,7 @@
 
 @keyframes appear-result-box{
 	from{
-	    margin: 100px;
+	    margin: 90px;
 	    border: solid rgba(130,130,130,0) 1px;
     	color: rgba(120,70,70,0);
     	background: rgba(0,0,0,0);
@@ -77,7 +77,7 @@
 }
 
 .result-box button{
-    margin: 100px;
+    margin: 90px;
     border: solid rgba(130,130,130,0) 1px;
     color: rgba(120,70,70,0);
     background: rgba(0,0,0,0);

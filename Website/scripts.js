@@ -29,10 +29,10 @@ function search(ele){
     }
 }
 
-function result(group,name,delay){
+function result(group,name){
     createGroupTitle(group);
     createGroupLine(group);
-    createResult(group,name,delay);
+    createResult(group,name);
 
 }
 
@@ -66,7 +66,9 @@ function createGroupLine(groupName){
 	}
 }
 
-function createResult(groupName,name,delay){
+var timers = {};
+
+function createResult(groupName,name){
     if(document.getElementById(name)==null){
         var div = document.getElementById("buttons"+groupName);
     	if(div==null){
@@ -82,7 +84,12 @@ function createResult(groupName,name,delay){
 	    var button = document.createElement('button');
 	    button.setAttribute('onClick',"showInfo(this)");
         button.setAttribute('id',name);
-        button.setAttribute('style',"animation-delay: "+delay+"s;");
+        if(name in timers){
+            button.setAttribute('style',"animation-delay: "+timers["name"]+"s;");
+            timers[name] += .1;
+        }else{
+            timers[name] = 0;
+        }
 	    var text = document.createTextNode(name);
 	    button.appendChild(text);
 	    div.appendChild(button);
