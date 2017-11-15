@@ -58,6 +58,7 @@
 
 body {
     background-color:white;
+    font-family: 'route';
     animation-name: fadecolor;
     animation-duration: 3s;
     animation-fill-mode: forwards;
