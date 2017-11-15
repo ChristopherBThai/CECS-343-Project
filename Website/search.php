@@ -32,6 +32,7 @@
 	}else{
 		echo '<script>console.log("0 results")</script>';
 	}
+		echo '<script type="text/javascript">resetTimers()</script>';
     mysqli_close($conn);
 ?>
 

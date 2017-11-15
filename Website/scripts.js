@@ -84,16 +84,20 @@ function createResult(groupName,name){
 	    var button = document.createElement('button');
 	    button.setAttribute('onClick',"showInfo(this)");
         button.setAttribute('id',name);
-        if(name in timers){
-            button.setAttribute('style',"animation-delay: "+timers["name"]+"s;");
-            timers[name] += .1;
+        if(groupName in timers){
+            button.setAttribute('style',"animation-delay: "+timers[groupName]+"s;");
+            timers[groupName] += .1;
         }else{
-            timers[name] = 0;
+            timers[groupName] = 0;
         }
 	    var text = document.createTextNode(name);
 	    button.appendChild(text);
 	    div.appendChild(button);
     }
+}
+
+function resetTimers(){
+    timers = {};
 }
 
 function showInfo(ele){
