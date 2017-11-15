@@ -27,7 +27,7 @@ function search(ele){
     }
 }
 
-function result(group,name,phone){
+function result(group,name){
     createGroupTitle(group);
     createGroupLine(group);
     createResult(group,name);
