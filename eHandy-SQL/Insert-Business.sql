@@ -97,7 +97,7 @@ INSERT INTO businessType(typeName, bWebID, typeRate) VALUES
 ('Gardner', 1167, -1),
 ('Plumber', 1168, -1),
 ('Pool Cleaner', 1169, -1),
-('Plumber', 1170, -1),
+('Plumber', 1170, -1);
 
 
 
