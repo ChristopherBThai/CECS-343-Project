@@ -21,9 +21,11 @@
 
 	if($result->num_rows>0){
 		while($row = $result->fetch_assoc()){
+			$pNum = $row[bPhoneNum];
+			$formatNum = '+1('.substr($pNum, 0, 3).')'.substr($pNum, 3, 3).'-'.substr($pNum, 6, 4);
 			echo '
             <p><b id="infoName" style="font-size:150%;">'.$q.'</b></p>
-            <p><b>Phone Number: </b><a id="infoPhone" href="#" >'.$row["bPhoneNum"].'</a></p>
+            <p><b>Phone Number: </b><a id="infoPhone" href="#" >'.$formatNum.'</a></p>
             <p><b>E-mail: </b><a id="infoEmail" href="#" >'.$row["bEmail"].'</a></p>
             ';
 		}
