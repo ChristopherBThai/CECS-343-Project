@@ -149,3 +149,6 @@ window.onClick = function(event){
     }
 }
 
+function reloadPage(){
+    window.location.reload();
+}
