@@ -24,8 +24,8 @@
 	$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$q."%'";
 	$result = $conn->query($sql);
 
-    $x = 1.0;
-    $y = .3;
+    $x = 0;
+    $y = .17;
 
 	if($result->num_rows>0){
 		while($row = $result->fetch_assoc()){
