@@ -11,3 +11,7 @@ Session.vim
 *~
 #Auto-generated tag files
 tags
+
+#Ignoring Aingty's Mac files & VScode setting
+*.pages
+*.vs*
