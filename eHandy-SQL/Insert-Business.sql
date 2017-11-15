@@ -60,4 +60,53 @@ INSERT INTO Business(bName, bWebID, bEmail, bAddress, bPhoneNum) VALUES
 ('Payless',1168,'payless@stores.com','5782 Jarjar Ave. Yavin, WA 63287','5623453456'),
 ('Midterm',1169,'hardtest@school.com','5467 Exit Ln. Bespin, WA 56355','5622342345'),
 ('Gardenscapers',1170,'gardenscape@gmail.com','7182 Newberry Ave. Gotham, CA 32455','5621231234');
+
+
+INSERT INTO businessType(typeName, bWebID, typeRate) VALUES
+('Gardener',1141, -1),
+('Plumber',1142, -1),
+('Auto Repair', 1143, -1),
+('Plumber', 1143, -1),
+('Window Repair', 1144, -1),
+('Gardener', 1145, -1),
+('Gardner', 1146, -1),
+('Plumber', 1147, -1),
+('Pool Cleaner', 1148, -1),
+('Gardener',1149, -1),
+('Plumber',1150, -1),
+('Auto Repair', 1151, -1),
+('Plumber', 1152, -1),
+('Window Repair', 1152, -1),
+('Gardener', 1153, -1),
+('Gardner', 1154, -1),
+('Plumber', 1155, -1),
+('Pool Cleaner', 1155, -1),
+('Plumber',1156, -1),
+('Auto Repair', 1157, -1),
+('Plumber', 1158, -1),
+('Window Repair', 1159, -1),
+('Gardener', 1159, -1),
+('Gardner', 1160, -1),
+('Plumber', 1161, -1),
+('Pool Cleaner', 11562, -1),
+('Plumber',1163, -1),
+('Auto Repair', 1164, -1),
+('Plumber', 1165, -1),
+('Window Repair', 1166, -1),
+('Gardener', 1166, -1),
+('Gardner', 1167, -1),
+('Plumber', 1168, -1),
+('Pool Cleaner', 1169, -1),
+('Plumber', 1170, -1);
+
+
+
+-- 
+-- CREATE TABLE BusinessType
+-- (
+--     typeName    VARCHAR(20)     NOT NULL,
+--     bWebID      INT             NOT NULL,       
+--     CONSTRAINT  Business_Type_FK FOREIGN KEY(bWebID) REFERENCES Business(bWebID),
+--     CONSTRAINT  Business_Type_PK PRIMARY KEY(typeName)
+-- );
 -- End of Business Insertion --
