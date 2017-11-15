@@ -21,7 +21,7 @@
 	
 	echo '<script>console.log("Connection success!")</script>';
 
-	$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$q."%'";
+	$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$q."%' OR bName LIKE '%".$q."%'";
 	$result = $conn->query($sql);
 
 

@@ -69,7 +69,8 @@ function createGroupLine(groupName){
 var timers = {};
 
 function createResult(groupName,name){
-    if(document.getElementById(name)==null){
+	var x = document.getElementById(name);
+    if(x==null || x.parentNode!=document.getElementById("buttons"+groupName)){
         var div = document.getElementById("buttons"+groupName);
     	if(div==null){
 		    var resultDisplay = document.getElementById(groupName);
@@ -153,16 +154,18 @@ function removeSignup(){
     document.getElementById('blurable').className = "unblur"; 
 }
 
-window.onClick = function(event){
-    sign = document.getElementById('signup');
-    info = document.getElementById('info');
-    log = document.getElementById('login');
-    if(event.target == sign || event.target == log || event.target == info){
-        sign.style.display = 'none';
-        log.style.display = 'none';
-        info.style.display = 'none';
-        document.getElementById('blurable').className = "unblur"; 
-    }
+
+function setPopupClose(){
+	document.getElementById('signup').addEventListener("close",function closeSignup(){
+		document.getElementById('signup').style.display = 'none';
+	});
+	document.getElementById('login').addEventListener("close",function closeLogin(){
+		document.getElementById('login').style.display = 'none';
+	});
+	document.getElementById('info').addEventListener("close",function closeInfo(){
+		document.getElementById('info').style.display = 'none';
+	});
+
 }
 
 function reloadPage(){
