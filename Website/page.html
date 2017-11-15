@@ -4,7 +4,9 @@
         <link rel="stylesheet" type="text/css" href="main.css">
         <link rel="stylesheet" type="text/css" href="loginForm.css">
         <link rel="stylesheet" type="text/css" href="result.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script type="text/javascript" src="scripts.js"></script>
+        <div id="phpScripts"></div>
         <title>eHandy</title>
     </head>
 
@@ -18,7 +20,7 @@
         </div>
 
         <div class="titlePadding" >
-            <a class="title">eHandy</a>
+            <button class="title blankButton" onClick="reloadPage()">eHandy</button>
         </div>
 
         <div class="search-padding">
@@ -30,7 +32,7 @@
   
     <div id="login" class="modal">
         <span onclick="removeLogin()" class="close" title="Close Modal">&times;</span>
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate" action="/action_page.php" >
             <div class="container">
 				<label><p><b style="font-size:150%;">Log in</b></p></label>
                 <label><b>Username</b></label>
@@ -67,11 +69,10 @@
     <div id="info" class="modal">
         <span onclick="removeInfo()" class="close" title="Close Modal">&times;</span>
 		<form class="modal-content animate">
-            <div class="container">
-				<p><b style="font-size:150%;">PlumbingX Co.</b></p>
-                <p><b id="infoName">James Smith</b></p>
-				<p><b>Phone Number: </b><a href="#" class="blur-info">(714)-371-1182</a></p>
-				<p><b>E-mail: </b><a href="#" class="blur-info">example@gmail.com</a></p>
+            <div id="infoLoc" class="container">
+				<p><b id="infoName" style="font-size:150%;">PlumbingX Co.</b></p>
+				<p><b>Phone Number: </b><a id="infoPhone" href="#" >(714)-371-1182</a></p>
+				<p><b>E-mail: </b><a id="infoEmail" href="#" >example@gmail.com</a></p>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
                 <button class="formButton cancelbtn" type="button" onClick="removeInfo()">Close</button>
@@ -79,5 +80,6 @@
             </div>
         </form>
     </div>
+
 
 </html>
