@@ -96,6 +96,10 @@ function createResult(groupName,name){
     }
 }
 
+function noResults(){
+	document.getElementById("display").innerHTML = '<p class="noResults"><br>0 results found</p>';
+}
+
 function resetTimers(){
     timers = {};
 }

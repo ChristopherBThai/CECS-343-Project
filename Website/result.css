@@ -46,6 +46,14 @@
     }
 } 
 
+@keyframes appear {
+		from{
+			color: rgba(120, 70, 70, 0);
+		}to{
+			color: rgba(120, 70, 70, 1);
+		}
+}
+
 .result-title {
     opacity: 0px;
     color: rgb(120, 70, 70);
@@ -112,4 +120,16 @@
     filter: blur(4px);
 	filter: url("blur.svg#gaussian_blur");
     -webkit-filter: blur(4px);
+}
+
+
+.noResults {
+    color: rgba(120, 70, 70, 0);
+    font-family: 'route';
+    font-size: 300%;
+	text-align: center;
+	animation-name: appear;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	position: relative;
 }

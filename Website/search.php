@@ -30,6 +30,7 @@
 			echo '<script type="text/javascript">result("'.$row["typeName"].'","'.$row["bName"].'")</script>';
 		}
 	}else{
+		echo '<script type="text/javascript">noResults()</script>';
 		echo '<script>console.log("0 results")</script>';
 	}
 		echo '<script type="text/javascript">resetTimers()</script>';
