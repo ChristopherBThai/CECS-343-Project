@@ -66,7 +66,7 @@ function createGroupLine(groupName){
 	}
 }
 
-function createResult(groupName,name){
+function createResult(groupName,name,delay){
     if(document.getElementById(name)==null){
         var div = document.getElementById("buttons"+groupName);
     	if(div==null){
@@ -82,6 +82,7 @@ function createResult(groupName,name){
 	    var button = document.createElement('button');
 	    button.setAttribute('onClick',"showInfo(this)");
         button.setAttribute('id',name);
+        button.setAttribute('style',"animation-delay: "+delay+"s;");
 	    var text = document.createTextNode(name);
 	    button.appendChild(text);
 	    div.appendChild(button);
