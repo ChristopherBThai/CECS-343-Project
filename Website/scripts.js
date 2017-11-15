@@ -5,6 +5,8 @@
 
 function search(ele){
     if(event.keyCode==13){
+        
+		document.getElementById("display").innerHTML = "";
 
 		//Sends AJAX request
 		if(window.XMLHttpRequest){
@@ -65,7 +67,7 @@ function createGroupLine(groupName){
 }
 
 function createResult(groupName,name){
-    if(document.getElementById("button"+name)==null){
+    if(document.getElementById(name)==null){
         var div = document.getElementById("buttons"+groupName);
     	if(div==null){
 		    var resultDisplay = document.getElementById(groupName);
@@ -133,5 +135,17 @@ function showSignup(){
 function removeSignup(){
     document.getElementById('signup').style.display='none';
     document.getElementById('blurable').className = "unblur"; 
+}
+
+window.onClick = function(event){
+    sign = document.getElementById('signup');
+    info = document.getElementById('info');
+    log = document.getElementById('login');
+    if(event.target == sign || event.target == log || event.target == info){
+        sign.style.display = 'none';
+        log.style.display = 'none';
+        info.style.display = 'none';
+        document.getElementById('blurable').className = "unblur"; 
+    }
 }
 
