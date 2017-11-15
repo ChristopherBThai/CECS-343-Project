@@ -29,7 +29,7 @@ INSERT INTO BusinessType(bWebID, typeName, typeRate) VALUES
 (1137, 'Food Delivery', -1),
 (1138, 'Painter', -1),
 (1139, 'Computer Repair', -1),
-(1140, 'Garage Installation', -1)
+(1140, 'Garage Installation', -1),
 (1141, 'Gardener', -1),
 (1142, 'Plumber',-1),
 (1143, 'Auto Repair', -1),

@@ -11,9 +11,9 @@ CREATE TABLE Homeowner
 CREATE TABLE HouseType
 (
     hWebID      INT             NOT NUll,
-    typeName    VARCHAR(20)     NOT NULL,
+    typeName    VARCHAR(100)     NOT NULL,
     CONSTRAINT  Home_Type_FK FOREIGN KEY(hWebID) REFERENCES Homeowner(hWebID),
-    CONSTRAINT  Home_Type_PK PRIMARY KEY(typeName)
+    CONSTRAINT  Home_Type_PK PRIMARY KEY(hWebID, typeName)
 );
 
 CREATE TABLE Business
@@ -29,10 +29,10 @@ CREATE TABLE Business
 CREATE TABLE BusinessType
 (
     bWebID      INT             NOT NULL,
-    typeName    VARCHAR(20)     NOT NULL,
+    typeName    VARCHAR(100)     NOT NULL,
     typeRate	INT,
     CONSTRAINT  Business_Type_FK FOREIGN KEY(bWebID) REFERENCES Business(bWebID),
-    CONSTRAINT  Business_Type_PK PRIMARY KEY(typeName)
+    CONSTRAINT  Business_Type_PK PRIMARY KEY(bWebID, typeName)
 );
 
 CREATE TABLE Review
