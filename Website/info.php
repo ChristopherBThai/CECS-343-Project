@@ -15,7 +15,7 @@
 	}
 	
 
-	$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$q."%'";
+	$sql = 'SELECT bPhoneNum,bEmail FROM Business WHERE bName = "'.$q.'"';
 	$result = $conn->query($sql);
 
 	if($result->num_rows>0){
