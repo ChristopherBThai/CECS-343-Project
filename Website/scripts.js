@@ -65,22 +65,54 @@ function createGroupLine(groupName){
 }
 
 function createResult(groupName,name){
-	var div = document.getElementById("buttons"+groupName);
-	if(div==null){
-		var resultDisplay = document.getElementById(groupName);
-		var divOuter = document.createElement('div');
-		divOuter.setAttribute('class',"result-box-padding");
-		div = document.createElement('div');
-		div.setAttribute('class',"result-box");
-		div.setAttribute('id',"buttons"+groupName);
-		resultDisplay.appendChild(divOuter);
-		divOuter.appendChild(div);
+    if(document.getElementById("button"+name)==null){
+        var div = document.getElementById("buttons"+groupName);
+    	if(div==null){
+		    var resultDisplay = document.getElementById(groupName);
+	    	var divOuter = document.createElement('div');
+	    	divOuter.setAttribute('class',"result-box-padding");
+	    	div = document.createElement('div');
+	       	div.setAttribute('class',"result-box");
+		    div.setAttribute('id',"buttons"+groupName);
+		    resultDisplay.appendChild(divOuter);
+		    divOuter.appendChild(div);
+	    }
+	    var button = document.createElement('button');
+	    button.setAttribute('onClick',"showInfo(this)");
+        button.setAttribute('id',name);
+	    var text = document.createTextNode(name);
+	    button.appendChild(text);
+	    div.appendChild(button);
+    }
+}
+
+function showInfo(ele){
+
+	//Sends AJAX request
+	if(window.XMLHttpRequest){
+		//For IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp = new XMLHttpRequest();
+	}else{
+		//For IE6, IE4
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 	}
-	var button = document.createElement('button');
-	button.setAttribute('onClick',"showInfo()");
-	var text = document.createTextNode(name);
-	button.appendChild(text);
-	div.appendChild(button);
+
+	xmlhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			document.getElementById("infoLoc").innerHTML = this.responseText;
+		}
+	};
+
+	xmlhttp.open("GET","info.php?q="+ele.id,true);
+	xmlhttp.send();
+    
+    document.getElementById('info').style.display='block';
+    document.getElementById('blurable').className = "blur"; 
+}
+
+function removeInfo(){
+    document.getElementById('info').style.display='none';
+    document.getElementById('blurable').className = "unblur"; 
 }
 
 function showLogin(){
@@ -90,16 +122,6 @@ function showLogin(){
 
 function removeLogin(){
     document.getElementById('login').style.display='none';
-    document.getElementById('blurable').className = "unblur"; 
-}
-
-function showInfo(){
-    document.getElementById('info').style.display='block';
-    document.getElementById('blurable').className = "blur"; 
-}
-
-function removeInfo(){
-    document.getElementById('info').style.display='none';
     document.getElementById('blurable').className = "unblur"; 
 }
 

@@ -2,35 +2,31 @@
 
     $q = $_GET["q"];
     
-	echo '<script>console.log("Starting php")</script>';
-
 	$servername="localhost";
 	$username="ehandy";
 	$password="jayden";
 	$dbname="eHandy";
 
-	echo '<script>console.log("Starting connection")</script>';
 
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	
-	echo '<script>console.log("Checking connection")</script>';
 	if($conn->connect_error){
-		echo '<script>console.log("Connection failed")</script>';
 		die("Connection failed: ".$conn->connect_error);
 	}
 	
-	echo '<script>console.log("Connection success!")</script>';
 
 	$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$q."%'";
 	$result = $conn->query($sql);
 
 	if($result->num_rows>0){
 		while($row = $result->fetch_assoc()){
-			echo '<script type="text/javascript">result("'.$row["typeName"].'","'.$row["bName"].'")</script>';
+			echo '
+            <p><b id="infoName" style="font-size:150%;">'.$q.'</b></p>
+            <p><b>Phone Number: </b><a id="infoPhone" href="#" >'.$row["bPhoneNum"].'</a></p>
+            <p><b>E-mail: </b><a id="infoEmail" href="#" >'.$row["bEmail"].'</a></p>
+            ';
 		}
 	}else{
-		echo '<script>console.log("0 results")</script>';
 	}
     mysqli_close($conn);
 ?>
-

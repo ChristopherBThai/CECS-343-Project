@@ -69,11 +69,10 @@
     <div id="info" class="modal">
         <span onclick="removeInfo()" class="close" title="Close Modal">&times;</span>
 		<form class="modal-content animate">
-            <div class="container">
-				<p><b style="font-size:150%;">PlumbingX Co.</b></p>
-                <p><b id="infoName">James Smith</b></p>
-				<p><b>Phone Number: </b><a href="#" class="blur-info">(714)-371-1182</a></p>
-				<p><b>E-mail: </b><a href="#" class="blur-info">example@gmail.com</a></p>
+            <div id="infoLoc" class="container">
+				<p><b id="infoName" style="font-size:150%;">PlumbingX Co.</b></p>
+				<p><b>Phone Number: </b><a id="infoPhone" href="#" >(714)-371-1182</a></p>
+				<p><b>E-mail: </b><a id="infoEmail" href="#" >example@gmail.com</a></p>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
                 <button class="formButton cancelbtn" type="button" onClick="removeInfo()">Close</button>
