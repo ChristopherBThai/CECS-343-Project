@@ -29,10 +29,10 @@ function search(ele){
     }
 }
 
-function result(group,name){
+function result(group,name,delay){
     createGroupTitle(group);
     createGroupLine(group);
-    createResult(group,name);
+    createResult(group,name,delay);
 
 }
 
