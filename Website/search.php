@@ -24,12 +24,13 @@
 	$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$q."%'";
 	$result = $conn->query($sql);
 
-    $x = 1;
+    $x = 1.0;
+    $y = .3;
 
 	if($result->num_rows>0){
 		while($row = $result->fetch_assoc()){
 			echo '<script type="text/javascript">result("'.$row["typeName"].'","'.$row["bName"].'",'.$x.')</script>';
-            $x = $x + .3;
+            $x += $y;
 		}
 	}else{
 		echo '<script>console.log("0 results")</script>';
