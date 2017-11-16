@@ -61,8 +61,14 @@ INSERT INTO BusinessType(bWebID, typeName, typeRate) VALUES
 (1165, 'Plumber', 25),
 (1166, 'Window Repair', 16),
 (1166, 'Gardener', 20),
-(1167, 'Gardener', 15),
+(1167, 'Home Decor', 15),
 (1168, 'Plumber', 30),
 (1169, 'Pool Cleaner', 15),
-(1170, 'Plumber', 25);
+(1170, 'Gardener', 25),
+(1171, 'Gaming', 65),
+(1172, 'Gaming', 50),
+(1173, 'Contractor', 99),
+(1174, 'Bed Repair', 22),
+(1175, 'Hero', 80),
+(1176, 'Protection', 34);
 -- End of Business Insertion Part 1 --
