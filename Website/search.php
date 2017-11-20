@@ -21,7 +21,7 @@
 	
 	echo '<script>console.log("Connection success!")</script>';
 	$s = explode(" ", $q);
-	for($i=0; $i<sizeof($s); $s++){
+	for($i=0; $i<sizeof($s); $i++){
 		$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$s[$i]."%' OR bName LIKE '%".$s[$i]."%'";
 		$result = $conn->query($sql);
         if($result->num_rows>0){
