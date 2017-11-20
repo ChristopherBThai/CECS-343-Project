@@ -24,18 +24,17 @@
 	for($i=0; $i<sizeof($s); $s++){
 		$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$s[$i]."%' OR bName LIKE '%".$s[$i]."%'";
 		$result = $conn->query($sql);
+        if($result->num_rows>0){
+		    while($row = $result->fetch_assoc()){
+			    echo '<script type="text/javascript">result("'.$row["typeName"].'","'.$row["bName"].'")</script>';
+		    }
+	    }else{
+		    echo '<script type="text/javascript">noResults()</script>';
+		    echo '<script>console.log("0 results")</script>';
+	    }
 	}
 
-
-	if($result->num_rows>0){
-		while($row = $result->fetch_assoc()){
-			echo '<script type="text/javascript">result("'.$row["typeName"].'","'.$row["bName"].'")</script>';
-		}
-	}else{
-		echo '<script type="text/javascript">noResults()</script>';
-		echo '<script>console.log("0 results")</script>';
-	}
-		echo '<script type="text/javascript">resetTimers()</script>';
+	echo '<script type="text/javascript">resetTimers()</script>';
     mysqli_close($conn);
 ?>
 
