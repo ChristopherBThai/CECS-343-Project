@@ -34,54 +34,58 @@
   
     <div id="login" class="modal">
         <span onclick="removeLogin()" class="close" title="Close Modal">&times;</span>
-        <form class="modal-content animate" action="/action_page.php" >
+        <form class="modal-content animate" action="/action_page.php" id="loginform">
             <div class="container">
 				<label><p><b style="font-size:150%;">Log in</b></p></label>
                 <label><b>Username</b></label>
                 <input class="formInput" type="text" placeholder="Enter Username" name="uname" required>
                 <label><b>Password</b></label>
                 <input class="formInput" type="password" placeholder="Enter Password" name="pws" required>
-                <button class="formButton" type="submit">Login</button>
+                <button id="loginbutton" class="formButton" type="submit">Login</button>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
-                <button class="formButton cancelbtn" type="button" onClick="removeLogin()">Cancel</button>
-                <span class="psw">Forgot <a href="#">password?</a></span> 
+                <button id="logincancel" class="formButton cancelbtn" type="button" onClick="removeLogin()">Cancel</button>
+                <span id="loginpw" class="psw">Forgot <a href="#">password?</a></span> 
             </div>
         </form>
     </div>
 
     <div id="signup" class="modal">
         <span onclick="removeSignup()" class="close" title="Close Modal">&times;</span>
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate" action="/action_page.php" id="signupform">
             <div class="container">
 				<label><p><b style="font-size:150%;">Sign up</b></p></label>
                 <label><b>Username</b></label>
                 <input class="formInput" type="text" placeholder="Enter Username" name="uname" required>
                 <label><b>Password</b></label>
                 <input class="formInput" type="password" placeholder="Enter Password" name="pws" required>
-                <button class="formButton" type="submit">Login</button>
+                <button id="signupbutton" class="formButton" type="submit">Signup</button>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
-                <button class="formButton cancelbtn" type="button" onClick="removeSignup()">Cancel</button>
-                <span class="psw">Forgot <a href="#">password?</a></span> 
+                <button id="signupcancel" class="formButton cancelbtn" type="button" onClick="removeSignup()">Cancel</button>
+                <span id="signuppw" class="psw"></span> 
             </div>
         </form>
     </div>
 
     <div id="info" class="modal">
         <span onclick="removeInfo()" class="close" title="Close Modal">&times;</span>
-		<form class="modal-content animate">
+		<form class="modal-content animate" id="infoform">
             <div id="infoLoc" class="container">
 				<p><b id="infoName" style="font-size:150%;">PlumbingX Co.</b></p>
 				<p><b>Phone Number: </b><a id="infoPhone" href="#" >(714)-371-1182</a></p>
 				<p><b>E-mail: </b><a id="infoEmail" href="#" >example@gmail.com</a></p>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
-                <button class="formButton cancelbtn" type="button" onClick="removeInfo()">Close</button>
+                <button id="infocancel" class="formButton cancelbtn" type="button" onClick="removeInfo()">Close</button>
                 <button class="formButton cancelbtn" style="background-color:#2020f4" type="button" onClick="removeInfo()">Contact</button>
             </div>
         </form>
     </div>
 
+	<script type="text/javascript">
+		setPopupClose();
+		setRunawayButton();
+	</script> 
 
 </html>
