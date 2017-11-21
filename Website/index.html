@@ -25,7 +25,7 @@
         </div>
 
         <div class="search-padding">
-            <input type="text" name="search-bar" class="search-bar" placeholder="Search" onkeydown="search(this)">
+            <input id="search-bar" type="text" name="search-bar" class="search-bar" placeholder="Search" onkeydown="search(this)">
         </div>
     
         <div id="display">
@@ -85,6 +85,7 @@
     </div>
 
 	<script type="text/javascript">
+        setTimeout(initBar(),3000);
 		setPopupClose();
 		setRunawayButton();
 	</script> 

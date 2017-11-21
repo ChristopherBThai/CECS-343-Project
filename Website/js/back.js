@@ -1,4 +1,41 @@
 /* Javascript that will run all the small scripts */
+/* Loops the search bar */
+function initBar(){
+    initBar.timerPerChar = 90;
+    initBar.timerPerDel= 40;
+    initBar.begText = "Search for ";
+    initBar.text = ["Gardener","Plumber","Computer Repair","Maid","Trainer","Home Repair"];
+    initBar.loc = 0;
+    initBar.bar = document.getElementById("search-bar");
+    initBar.interval = setInterval(writeBar,initBar.timerPerChar);
+}
+function writeBar(){
+    var current = initBar.bar.getAttribute("placeholder");
+    var text = initBar.text[initBar.loc];
+    if(current.length-initBar.begText.length<text.length){
+        initBar.bar.setAttribute("placeholder",initBar.begText+text.substr(0,current.length-initBar.begText.length+1)+"");
+    }else{
+        clearInterval(initBar.interval);
+        var t = setTimeout(function(){
+            initBar.interval = setInterval(eraseBar,initBar.timerPerDel)
+        },2000);
+    }
+}
+function eraseBar(){
+    var current = initBar.bar.getAttribute("placeholder");
+    var text = initBar.text[initBar.loc];
+    if(current.length-initBar.begText.length>0){
+        initBar.bar.setAttribute("placeholder",initBar.begText+text.substr(0,current.length-initBar.begText.length-1)+"");
+    }else{
+        clearInterval(initBar.interval);
+        var t = setTimeout(function(){
+            initBar.loc = (initBar.loc+1)%initBar.text.length;
+            initBar.bar.setAttribute("placeholder",initBar.begText);
+            initBar.interval = setInterval(writeBar,initBar.timerPerChar)
+        },1000);
+    }
+}
+
 /* Calls info.php and display the business' info */
 function showInfo(ele){
 
