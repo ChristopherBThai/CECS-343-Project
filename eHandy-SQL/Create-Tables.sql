@@ -40,7 +40,7 @@ CREATE TABLE Review
     hWebID      INT             NOT NULL,
     bWebID      INT             NOT NULL,
     typeName    VARCHAR(100)    NOT NULL,
-    dateReview  DATETIME        NOT NULL,
+    dateReview  DATE            NOT NULL,
     reviewStars INT             NOT NULL,
     rAnonymous  VARCHAR(1),
     rDetails    VARCHAR(500),
