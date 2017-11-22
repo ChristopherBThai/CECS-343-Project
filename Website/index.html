@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="main.css">
-        <link rel="stylesheet" type="text/css" href="loginForm.css">
-        <link rel="stylesheet" type="text/css" href="result.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/loginForm.css">
+        <link rel="stylesheet" type="text/css" href="css/search.css">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script type="text/javascript" src="scripts.js"></script>
+        <script type="text/javascript" src="js/search.js"></script>
+        <script type="text/javascript" src="js/back.js"></script>
         <div id="phpScripts"></div>
         <title>eHandy</title>
     </head>
@@ -24,7 +25,7 @@
         </div>
 
         <div class="search-padding">
-            <input type="text" name="search-bar" class="search-bar" placeholder="Search" onkeydown="search(this)">
+            <input id="search-bar" type="text" name="search-bar" class="search-bar" placeholder="Search" onkeydown="search(this)">
         </div>
     
         <div id="display">
@@ -84,6 +85,7 @@
     </div>
 
 	<script type="text/javascript">
+        setTimeout(initBar(),3000);
 		setPopupClose();
 		setRunawayButton();
 	</script> 
