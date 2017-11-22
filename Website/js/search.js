@@ -1,8 +1,5 @@
-/* jshint browser: true */
-/* eslint-env browser */
-/* eslint no-unused-vars:0 */
-/* eslint no-unused-vars: "error" */
-
+/* Javascript for the searching functions */
+/* Search function that will call search.php */
 function search(ele){
     if(event.keyCode==13){
         
@@ -23,12 +20,13 @@ function search(ele){
 			}
 		};
 
-		xmlhttp.open("GET","search.php?q="+ele.value,true);
+		xmlhttp.open("GET","php/search.php?q="+ele.value,true);
 		xmlhttp.send();
 
     }
 }
 
+/* One function to display all three components of a result */
 function result(group,name){
     createGroupTitle(group);
     createGroupLine(group);
@@ -36,7 +34,7 @@ function result(group,name){
 
 }
 
-
+/* Creates a title for the grouptype */
 function createGroupTitle(name){
 	if(document.getElementById(name)==null){
 		var resultDisplay = document.getElementById("display");
@@ -56,6 +54,7 @@ function createGroupTitle(name){
 	}
 }
 
+/* Creates a line below the grouptype name */
 function createGroupLine(groupName){
 	if(document.getElementById("line"+groupName)==null){
     	var resultDisplay = document.getElementById(groupName);
@@ -66,10 +65,11 @@ function createGroupLine(groupName){
 	}
 }
 
+/* Creates the results and catagorizes them */
 var timers = {};
-
 function createResult(groupName,name){
-    if(document.getElementById(name)==null){
+	var x = document.getElementById(name);
+    if(x==null || x.parentNode!=document.getElementById("buttons"+groupName)){
         var div = document.getElementById("buttons"+groupName);
     	if(div==null){
 		    var resultDisplay = document.getElementById(groupName);
@@ -96,71 +96,12 @@ function createResult(groupName,name){
     }
 }
 
+/* Displays "0 Results found" */
+function noResults(){
+	document.getElementById("display").innerHTML = '<p class="noResults"><br>0 results found</p>';
+}
+
+/* Reset timers for result animations */
 function resetTimers(){
     timers = {};
-}
-
-function showInfo(ele){
-
-	//Sends AJAX request
-	if(window.XMLHttpRequest){
-		//For IE7+, Firefox, Chrome, Opera, Safari
-		xmlhttp = new XMLHttpRequest();
-	}else{
-		//For IE6, IE4
-		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	xmlhttp.onreadystatechange = function(){
-		if(this.readyState == 4 && this.status == 200){
-			document.getElementById("infoLoc").innerHTML = this.responseText;
-		}
-	};
-
-	xmlhttp.open("GET","info.php?q="+ele.id,true);
-	xmlhttp.send();
-    
-    document.getElementById('info').style.display='block';
-    document.getElementById('blurable').className = "blur"; 
-}
-
-function removeInfo(){
-    document.getElementById('info').style.display='none';
-    document.getElementById('blurable').className = "unblur"; 
-}
-
-function showLogin(){
-    document.getElementById('login').style.display='block';
-    document.getElementById('blurable').className = "blur"; 
-}
-
-function removeLogin(){
-    document.getElementById('login').style.display='none';
-    document.getElementById('blurable').className = "unblur"; 
-}
-
-function showSignup(){
-    document.getElementById('signup').style.display='block';
-    document.getElementById('blurable').className = "blur"; 
-}
-
-function removeSignup(){
-    document.getElementById('signup').style.display='none';
-    document.getElementById('blurable').className = "unblur"; 
-}
-
-window.onClick = function(event){
-    sign = document.getElementById('signup');
-    info = document.getElementById('info');
-    log = document.getElementById('login');
-    if(event.target == sign || event.target == log || event.target == info){
-        sign.style.display = 'none';
-        log.style.display = 'none';
-        info.style.display = 'none';
-        document.getElementById('blurable').className = "unblur"; 
-    }
-}
-
-function reloadPage(){
-    window.location.reload();
 }

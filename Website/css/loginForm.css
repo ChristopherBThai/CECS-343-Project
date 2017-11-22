@@ -1,3 +1,5 @@
+/* CSS for all login, signup, and info popups */
+
 /* ================ FORM ================== */
 form {
     border: 3px solid #f1f1f1;
@@ -11,6 +13,35 @@ form {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+}
+
+@keyframes aright{
+	from{
+		margin-left: 0%;
+	}to{
+		margin-left: 80%;
+	}
+}
+
+@keyframes aleft{
+	from{
+		margin-left: 80%;
+	}to{
+		margin-left: 0%;
+	}
+}
+
+.right{
+	animation-name: aright;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	position: relative;
+}
+.left{
+	animation-name: aleft;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	position: relative;
 }
 
 /* Set a style for form buttons */
