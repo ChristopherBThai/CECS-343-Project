@@ -22,7 +22,7 @@
             //initBar.splice(Math.floor(Math.random*initBar.text.length+1),0,'.$row["typeName"].');
 			echo '
 			<script type="text/javascript">
-            console.log('.$row["typeName"].');
+            console.log("'.$row["typeName"].'");
             </script>
             ';
 		}
