@@ -7,9 +7,8 @@ function initBar(){
     initBar.text = [];
     initBar.loc = 0;
     initBar.bar = document.getElementById("search-bar");
-    initBar.interval = setInterval(writeBar,initBar.timerPerChar);
     
-	//Sends AJAX request
+	//Sends AJAX request for types.php
 	if(window.XMLHttpRequest){
 		//For IE7+, Firefox, Chrome, Opera, Safari
 		xmlhttp = new XMLHttpRequest();
@@ -26,6 +25,9 @@ function initBar(){
 
 	xmlhttp.open("GET","php/types.php",true);
 	xmlhttp.send();
+    
+    //Initialize search bar animation 
+    initBar.interval = setInterval(writeBar,initBar.timerPerChar);
 }
 function writeBar(){
     var current = initBar.bar.getAttribute("placeholder");

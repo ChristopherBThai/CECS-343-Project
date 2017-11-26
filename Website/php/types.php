@@ -19,10 +19,9 @@
 	if($result->num_rows>0){
 		while($row = $result->fetch_assoc()){
             //Creates an array for javascript
-            //initBar.splice(Math.floor(Math.random*initBar.text.length+1),0,'.$row["typeName"].');
 			echo '
 			<script type="text/javascript">
-            console.log("'.$row["typeName"].'");
+            initBar.splice(Math.floor(Math.random*initBar.text.length+1),0,"'.$row["typeName"].'");
             </script>
             ';
 		}
