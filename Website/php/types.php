@@ -21,7 +21,7 @@
             //Creates an array for javascript
 			echo '
 			<script type="text/javascript">
-            initBar.splice(Math.floor(Math.random()*(initBar.text.length+1)),0,"'.$row["typeName"].'");
+            initBar.text.splice(Math.floor(Math.random()*(initBar.text.length+1)),0,"'.$row["typeName"].'");
             </script>
             ';
 		}
