@@ -1,6 +1,6 @@
 
 <?php
-    //php that will grab all business type names (limit of 25)
+    //php that will grab all business type names (no limit)
 
 	$servername="localhost";
 	$username="ehandy";
@@ -13,7 +13,7 @@
 		die("Connection failed: ".$conn->connect_error);
 	}
 
-	$sql = 'SELECT DISTINCT typeName FROM BusinessType LIMIT 25';
+	$sql = 'SELECT DISTINCT typeName FROM BusinessType';
 	$result = $conn->query($sql);
 
 	if($result->num_rows>0){
