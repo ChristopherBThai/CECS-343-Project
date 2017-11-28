@@ -1,8 +1,8 @@
-
+/* CSS for the main body, title, search bar, and buttons */
 @font-face {
     font-family: 'route';
-    src: url('Fonts/Route/route159-ultralight-webfont.woff2') format('woff2'),
-        url('Fonts/Route/route159-ultralight-webfont.woff') format('woff');
+    src: url('../Fonts/Route/route159-ultralight-webfont.woff2') format('woff2'),
+        url('../Fonts/Route/route159-ultralight-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
