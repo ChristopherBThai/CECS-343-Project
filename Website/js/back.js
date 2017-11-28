@@ -4,9 +4,29 @@ function initBar(){
     initBar.timerPerChar = 90;
     initBar.timerPerDel= 40;
     initBar.begText = "Search for ";
-    initBar.text = ["Gardener","Plumber","Computer Repair","Maid","Trainer","Home Repair"];
+    initBar.text = [];
     initBar.loc = 0;
     initBar.bar = document.getElementById("search-bar");
+    
+	//Sends AJAX request for types.php
+	if(window.XMLHttpRequest){
+		//For IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp = new XMLHttpRequest();
+	}else{
+		//For IE6, IE4
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+	xmlhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			$('#phpScripts').append(xmlhttp.responseText);
+		}
+	};
+
+	xmlhttp.open("GET","php/types.php",true);
+	xmlhttp.send();
+    
+    //Initialize search bar animation 
     initBar.interval = setInterval(writeBar,initBar.timerPerChar);
 }
 function writeBar(){
