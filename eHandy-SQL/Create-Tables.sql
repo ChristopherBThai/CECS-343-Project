@@ -37,15 +37,16 @@ CREATE TABLE BusinessType
 
 CREATE TABLE Review
 (
-    dateReview  DATETIME        NOT NULL,
-    reviewStars INT             NOT NULL,
     hWebID      INT             NOT NULL,
     bWebID      INT             NOT NULL,
-    rDetails    VARCHAR(500),
+    typeName    VARCHAR(100)    NOT NULL,
+    dateReview  DATE            NOT NULL,
+    reviewStars INT             NOT NULL,
     rAnonymous  VARCHAR(1),
+    rDetails    VARCHAR(500),
     CONSTRAINT  Review_Home_FK FOREIGN KEY(hWebID) REFERENCES Homeowner(hWebID),
-    CONSTRAINT  Review_Business_FK FOREIGN KEY(bWebID) REFERENCES Business(bWebID),
-    CONSTRAINT  Reieve_PK PRIMARY KEY(dateReview, reviewStars)  
+    CONSTRAINT  Review_Business_FK FOREIGN KEY(bWebID, typeName) REFERENCES BusinessType(bWebID, typeName),
+    CONSTRAINT  Reieve_PK PRIMARY KEY(dateReview)  
 );
 
 

@@ -60,10 +60,12 @@ INSERT INTO Business(bName, bWebID, bEmail, bAddress, bPhoneNum) VALUES
 ('Payless',1168,'payless@stores.com','5782 Jarjar Ave. Yavin, WA 63287','5623453456'),
 ('Midterm',1169,'hardtest@school.com','5467 Exit Ln. Bespin, WA 56355','5622342345'),
 ('Gardenscapers',1170,'gardenscape@gmail.com','7182 Newberry Ave. Gotham, CA 32455','5621231234'),
-('Electronic Arts', 1171, 'electronicarts@ea.com', '5601 Downvote St. Reddit, NY 90807', '7194160275'),
-('Origin', 1172, 'origin@ea.com', '1233 Hell Ave. Slum Dog, TX 15322', '5552349859'),
-('First Order', 1173, 'rule@galaxy.com', '2222 Starkiller Blvd. Fondor, AZ 96047', '8923461046'),
-('[{-_-}] ZZzz zz..', 1174, 'sleeping@home.gov', '4221 Dream Ave. Wonderland, KS 84913', '8915036295'),
-('Justice League', 1175, 'justicefor@all.com', '8491 Warner Blvd. DC Universe, CA 73844', '0135739693'),
-('We Know Nothing', 1176, 'idk@anything.org', '404 Questions Ave. , OH 85693', '2953857104');
+('Electronic Arts',1171,'electronicarts@ea.com','5601 Downvote St. Reddit, NY 90807','7194160275'),
+('Origin',1172,'origin@ea.com','1233 Hell Ave. Slum Dog, TX 15322','5552349859'),
+('First Order',1173,'rule@galaxy.com','2222 Starkiller Blvd. Fondor, AZ 96047','8923461046'),
+('[{-_-}] ZZzz zz..',1174,'sleeping@home.gov','4221 Dream Ave. Wonderland, KS 84913','8915036295'),
+('Justice League',1175,'justicefor@all.com','8491 Warner Blvd. DC Universe, CA 73844','0135739693'),
+('We Know Nothing',1176,'idk@anything.org','404 Questions Ave. Limited City, OH 85693','2953857104'),
+('You know Nothing',1177,'jonsnow@thewall.com','1 Dothraki Army Ave. Winterfell, NY 90705', '2185729532'),
+('Resistance', 1178, 'rebels@tatooine.com', '1233 Imperial Hwy Toshe Station, CA 90888', '2716536791');
 -- End of Business Insertion --
