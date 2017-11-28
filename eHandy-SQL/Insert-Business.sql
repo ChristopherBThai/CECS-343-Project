@@ -65,5 +65,7 @@ INSERT INTO Business(bName, bWebID, bEmail, bAddress, bPhoneNum) VALUES
 ('First Order',1173,'rule@galaxy.com','2222 Starkiller Blvd. Fondor, AZ 96047','8923461046'),
 ('[{-_-}] ZZzz zz..',1174,'sleeping@home.gov','4221 Dream Ave. Wonderland, KS 84913','8915036295'),
 ('Justice League',1175,'justicefor@all.com','8491 Warner Blvd. DC Universe, CA 73844','0135739693'),
-('We Know Nothing',1176,'idk@anything.org','404 Questions Ave. , OH 85693','2953857104');
+('We Know Nothing',1176,'idk@anything.org','404 Questions Ave. Limited City, OH 85693','2953857104'),
+('You know Nothing',1177,'jonsnow@thewall.com','1 Dothraki Army Ave. Winterfell, NY 90705', '2185729532'),
+('Resistance', 1178, 'rebels@tatooine.com', '1233 Imperial Hwy Toshe Station, CA 90888', '2716536791');
 -- End of Business Insertion --

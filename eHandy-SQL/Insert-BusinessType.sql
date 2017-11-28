@@ -70,5 +70,10 @@ INSERT INTO BusinessType(bWebID, typeName, typeRate) VALUES
 (1173, 'First Order', 99),
 (1174, 'Bed Shop', 25),
 (1175, 'Hero', 65),
-(1176, 'Security', 25);
+(1176, 'Security', 25),
+(1176, 'Bodyguard', 30),
+(1177, 'Security', 30),
+(1177, 'Nights Watch', 10),
+(1178, 'Auto Repair', 20),
+(1178, 'Small Army', 22);
 -- End of Business Insertion Part 1 --
