@@ -23,11 +23,16 @@
 	echo '<script>console.log("Connection success!")</script>';
 	$s = explode(" ", $q);
 	for($i=0; $i<sizeof($s); $i++){
-	//Removes any plural words
+		//Removes any plural words
 		if (substr($s[$i], strlen($s[$i])-1) == "s")
-  			$s[$i] = substr($s[$i], 0, strlen($s[$i])-1);
-        //Search based off of every word
-		$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$s[$i]."%' OR bName LIKE '%".$s[$i]."%'";
+				$s[$i] = substr($s[$i], 0, strlen($s[$i])-1);
+	}
+
+	$newS = implode(" ", $s);
+
+	
+		//$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$s[$i]."%' OR bName LIKE '%".$s[$i]."%'";
+		$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE INSTR(".$newS.", bName)<>0 OR INSTR(".$newS.", typeName)<>0";
 		$result = $conn->query($sql);
         if($result->num_rows>0){
 		    while($row = $result->fetch_assoc()){
