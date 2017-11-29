@@ -28,6 +28,7 @@
             <input id="search-bar" type="text" name="search-bar" class="search-bar" placeholder="Search" onkeydown="search(this)">
         </div>
     
+
         <div id="display">
 		</div>
 
@@ -58,8 +59,21 @@
 				<label><p><b style="font-size:150%;">Sign up</b></p></label>
                 <label><b>Username</b></label>
                 <input class="formInput" type="text" placeholder="Enter Username" name="uname" required>
+                <label><b>E-mail</b></label>
+                <input class="formInput" type="email" placeholder="Enter E-mail" name="email" required>
                 <label><b>Password</b></label>
                 <input class="formInput" type="password" placeholder="Enter Password" name="pws" required>
+                <label><b>Confirm Password</b></label>
+                <input class="formInput" type="password" placeholder="Enter Password" name="cpws" required>
+				<div class="radio-wrapper">
+					<div class="toggle_radio">
+						<input type="radio" class="toggle_option" id="first_toggle" name="toggle_option">
+						<input type="radio" checked class="toggle_option" id="second_toggle" name="toggle_option">
+						<label for="first_toggle"><p>Home Owner</p></label>
+						<label for="second_toggle" style="margin-right: 0;"><p>Business Owner</p></label>
+					<div class="toggle_option_slider">
+					</div>
+				</div>
                 <button id="signupbutton" class="formButton" type="submit">Signup</button>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
