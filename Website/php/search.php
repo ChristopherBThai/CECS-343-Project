@@ -23,7 +23,7 @@
 	echo '<script>console.log("Connection success!")</script>';
 	
 		//$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$s[$i]."%' OR bName LIKE '%".$s[$i]."%'";
-		$testing = ".$q.";
+		$testing = $q;
 		$sql = "SELECT bName FROM Business NATURAL JOIN BusinessType WHERE INSTR('$testing', bName)<>0 OR INSTR('$testing', typeName)<>0";
 		$result = $conn->query($sql);
         if($result->num_rows>0){
