@@ -83,6 +83,7 @@ function createResult(groupName,name){
 	    }
 	    var button = document.createElement('button');
 	    button.setAttribute('onClick',"showInfo(this)");
+		button.setAttribute('style','style="background: linear-gradient(rgba(248, 185, 28, 0) 70%, rgba(0, 0, 0, 0.68) ), url(pictures/orange.jpg) no-repeat center;');
         button.setAttribute('id',name);
         if(groupName in timers){
             button.setAttribute('style',"animation-delay: "+timers[groupName]+"s;");
@@ -90,8 +91,11 @@ function createResult(groupName,name){
         }else{
             timers[groupName] = 0;
         }
+		var par = document.createElement('p');
+		par.setAttribute('style','color: #fff;padding-top: 76%;float: left;vertical-align: bottom;');
 	    var text = document.createTextNode(name);
-	    button.appendChild(text);
+		par.appendChild(text);
+	    button.appendChild(par);
 	    div.appendChild(button);
     }
 }
