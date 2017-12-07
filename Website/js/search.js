@@ -67,7 +67,7 @@ function createGroupLine(groupName){
 
 /* Creates the results and catagorizes them */
 var timers = {};
-function createResult(groupName,name){
+function createResult(groupName,name,id){
 	var x = document.getElementById(name);
     if(x==null || x.parentNode!=document.getElementById("buttons"+groupName)){
         var div = document.getElementById("buttons"+groupName);
@@ -85,11 +85,11 @@ function createResult(groupName,name){
 	    button.setAttribute('onClick',"showInfo(this)");
         button.setAttribute('id',name);
         if(groupName in timers){
-            button.setAttribute('style',"animation-delay: "+timers[groupName]+"s;background: linear-gradient(rgba(248, 185, 28, 0) 70%, rgba(0, 0, 0, 0.68) ), url(pictures/orange.jpg) no-repeat center;");
+            button.setAttribute('style',"animation-delay: "+timers[groupName]+"s;background: linear-gradient(rgba(248, 185, 28, 0) 70%, rgba(0, 0, 0, 0.68) ), url(pictures/"+id+".jpg) no-repeat center;");
             timers[groupName] += .1;
         }else{
             timers[groupName] = 0;
-            button.setAttribute('style',"background: linear-gradient(rgba(248, 185, 28, 0) 70%, rgba(0, 0, 0, 0.68) ), url(pictures/orange.jpg) no-repeat center;");
+            button.setAttribute('style',"background: linear-gradient(rgba(248, 185, 28, 0) 70%, rgba(0, 0, 0, 0.68) ), url(pictures/"+id+".jpg) no-repeat center;");
         }
 		var par = document.createElement('p');
 		par.setAttribute('style','color: #fff;padding-top: 76%;float: left;vertical-align: bottom;');
