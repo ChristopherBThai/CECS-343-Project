@@ -32,7 +32,7 @@
 		}
         //Search based off of every word
 		//$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$s[$i]."%' OR bName LIKE '%".$s[$i]."%'";
-		$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE INSTR('{$q}', bName)<>0 OR INSTR('{$q}', typeName)<>0";		
+		$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE INSTR('{$q}', bName)>0 OR INSTR('{$q}', typeName)>0";		
 		$result = $conn->query($sql);
 		if($result->num_rows>0)
 		{
