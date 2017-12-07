@@ -22,14 +22,6 @@
 	}
 	
 	echo '<script>console.log("Connection success!")</script>';
-	$s = explode(" ", $q);
-	for($i=0; $i<sizeof($s); $i++)
-	{
-		//Removes any plural words
-		if (substr($s[$i], strlen($s[$i])-1) == "s")
-		{
-			$s[$i] = substr($s[$i], 0, strlen($s[$i])-1);
-		}
         //Search based off of every word
 		//$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$s[$i]."%' OR bName LIKE '%".$s[$i]."%'";
 		$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE INSTR('{$q}', bName)>0 OR INSTR('{$q}', typeName)>0";		
@@ -47,7 +39,6 @@
 		    echo '<script type="text/javascript">noResults()</script>';
 		    echo '<script>console.log("0 results")</script>';
 	    }
-	}
 
 	echo '<script type="text/javascript">resetTimers()</script>';
     mysqli_close($conn);
