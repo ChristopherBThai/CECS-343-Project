@@ -15,26 +15,35 @@
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	
 	echo '<script>console.log("Checking connection")</script>';
-	if($conn->connect_error){
+	if($conn->connect_error)
+	{
 		echo '<script>console.log("Connection failed")</script>';
 		die("Connection failed: ".$conn->connect_error);
 	}
 	
 	echo '<script>console.log("Connection success!")</script>';
 	$s = explode(" ", $q);
-	for($i=0; $i<sizeof($s); $i++){
-	//Removes any plural words
+	for($i=0; $i<sizeof($s); $i++)
+	{
+		//Removes any plural words
 		if (substr($s[$i], strlen($s[$i])-1) == "s")
-  			$s[$i] = substr($s[$i], 0, strlen($s[$i])-1);
+		{
+			$s[$i] = substr($s[$i], 0, strlen($s[$i])-1);
+		}
         //Search based off of every word
-		$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$s[$i]."%' OR bName LIKE '%".$s[$i]."%'";
+		//$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$s[$i]."%' OR bName LIKE '%".$s[$i]."%'";
+		$sql = "SELECT bName FROM Business NATURAL JOIN BusinessType WHERE INSTR('{$q}', bName)<>0 OR INSTR('{$q}', typeName)<>0";		
 		$result = $conn->query($sql);
-        if($result->num_rows>0){
-		    while($row = $result->fetch_assoc()){
+		if($result->num_rows>0)
+		{
+			while($row = $result->fetch_assoc())
+			{
                 //Javascript to insert results
 			    echo '<script type="text/javascript">result("'.$row["typeName"].'","'.$row["bName"].'")</script>';
 		    }
-	    }else{
+		}
+		else
+		{
 		    echo '<script type="text/javascript">noResults()</script>';
 		    echo '<script>console.log("0 results")</script>';
 	    }
@@ -43,4 +52,3 @@
 	echo '<script type="text/javascript">resetTimers()</script>';
     mysqli_close($conn);
 ?>
-
