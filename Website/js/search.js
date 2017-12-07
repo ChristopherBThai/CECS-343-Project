@@ -83,7 +83,6 @@ function createResult(groupName,name){
 	    }
 	    var button = document.createElement('button');
 	    button.setAttribute('onClick',"showInfo(this)");
-		button.setAttribute('style','"
         button.setAttribute('id',name);
         if(groupName in timers){
             button.setAttribute('style',"animation-delay: "+timers[groupName]+"s;background: linear-gradient(rgba(248, 185, 28, 0) 70%, rgba(0, 0, 0, 0.68) ), url(pictures/orange.jpg) no-repeat center;");
