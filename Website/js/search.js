@@ -27,10 +27,10 @@ function search(ele){
 }
 
 /* One function to display all three components of a result */
-function result(group,name){
+function result(group,name,id){
     createGroupTitle(group);
     createGroupLine(group);
-    createResult(group,name);
+    createResult(group,name,id);
 
 }
 
@@ -85,11 +85,11 @@ function createResult(groupName,name,id){
 	    button.setAttribute('onClick',"showInfo(this)");
         button.setAttribute('id',name);
         if(groupName in timers){
-            button.setAttribute('style',"animation-delay: "+timers[groupName]+"s;background: linear-gradient(rgba(248, 185, 28, 0) 70%, rgba(0, 0, 0, 0.68) ), url(pictures/"+id+".jpg) no-repeat center;");
+            button.setAttribute('style',"animation-delay: "+timers[groupName]+"s;background: linear-gradient(rgba(248, 185, 28, 0) 70%, rgba(0, 0, 0, 0.68) ), url(pictures/"+id+".jpg) no-repeat center;background-size: cover;");
             timers[groupName] += .1;
         }else{
             timers[groupName] = 0;
-            button.setAttribute('style',"background: linear-gradient(rgba(248, 185, 28, 0) 70%, rgba(0, 0, 0, 0.68) ), url(pictures/"+id+".jpg) no-repeat center;");
+            button.setAttribute('style',"background: linear-gradient(rgba(248, 185, 28, 0) 70%, rgba(0, 0, 0, 0.68) ), url(pictures/"+id+".jpg) no-repeat center;background-size: cover;");
         }
 		var par = document.createElement('p');
 		par.setAttribute('style','color: #fff;padding-top: 76%;float: left;vertical-align: bottom;');
