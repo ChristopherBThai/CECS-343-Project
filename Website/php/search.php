@@ -1,13 +1,17 @@
 <?php
     //PHP to get all the businesses baseded off their name and types
+
     $q = $_GET["q"];
     
 	echo '<script>console.log("Starting php")</script>';
+
 	$servername="localhost";
 	$username="ehandy";
 	$password="jayden";
 	$dbname="eHandy";
+
 	echo '<script>console.log("Starting connection")</script>';
+
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	
 	echo '<script>console.log("Checking connection")</script>';
@@ -36,6 +40,7 @@
 		    echo '<script type="text/javascript">noResults()</script>';
 		    echo '<script>console.log("0 results")</script>';
 	    }
+
 	echo '<script type="text/javascript">resetTimers()</script>';
     mysqli_close($conn);
 ?>
