@@ -29,7 +29,8 @@
         //Logged in
         unset($_POST);
         msg("Logged in");
-        $sql = "SELECT hName FROM Homeowner WHERE hWebID = '$result->fetch_assoc()[id]'";
+        $id = $result->fetch_assoc()["id"];
+        $sql = "SELECT hName FROM Homeowner WHERE hWebID = '$id'";
         $result = $db->query($sql);
         if($result){
             welcome($result->fetch_assoc()["hName"]);
