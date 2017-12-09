@@ -1,4 +1,21 @@
-<!DOCTYPE html> <html> <head> <link rel="stylesheet" type="text/css" href="css/main.css"> <link rel="stylesheet" type="text/css" href="css/loginForm.css">
+<?php
+    error_reporting(E_ALL);
+    ini_set('display_errors',1);
+    include_once 'common.php';
+    include_once 'db.php';
+    msg("Checking if _POST is available");
+    if(!isset($_POST['submit'])):
+        msg("No post");
+    else:
+        msg("Found post");
+        msg("User: '$_POST['name']'");
+        msg("Email: '$_POST['email']'");
+        msg("Password: '$_POST['pws']'");
+    endif;
+?>
+<!DOCTYPE html> 
+<html> 
+    <head> <link rel="stylesheet" type="text/css" href="css/main.css"> <link rel="stylesheet" type="text/css" href="css/loginForm.css">
         <link rel="stylesheet" type="text/css" href="css/search.css">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/search.js"></script>
@@ -51,11 +68,11 @@
 
     <div id="signup" class="modal">
         <span onclick="removeSignup()" class="close" title="Close Modal">&times;</span>
-        <form class="modal-content animate" action="/action_page.php" id="signupform">
+        <form method="post" class="modal-content animate" action="<?=$_SERVER['PHP_SELF']?>" id="signupform">
             <div class="container">
 				<label><p><b style="font-size:150%;">Sign up</b></p></label>
                 <label><b>Username</b></label>
-                <input class="formInput" type="text" placeholder="Enter Username" name="uname" required>
+                <input class="formInput" type="text" placeholder="Enter Username" name="name" required>
                 <label><b>E-mail</b></label>
                 <input class="formInput" type="email" placeholder="Enter E-mail" name="email" required>
                 <label><b>Password</b></label>
@@ -72,7 +89,7 @@
 					</div>
 					</div>
 				</div>
-                <button id="signupbutton" class="formButton" type="submit">Signup</button>
+                <button id="signupbutton" class="formButton" type="submit" name="submit" value="OK">Signup</button>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
                 <button id="signupcancel" class="formButton cancelbtn" type="button" onClick="removeSignup()">Cancel</button>
@@ -108,7 +125,7 @@
 	<script type="text/javascript">
         setTimeout(initBar(),3000);
 		setPopupClose();
-		setRunawayButton();
+		//setRunawayButton();
 	</script> 
 
 </html>
