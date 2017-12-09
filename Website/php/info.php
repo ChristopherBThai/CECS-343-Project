@@ -40,7 +40,7 @@
 		while($row = $result->fetch_assoc()){
             $name;
             if($row["rAnonymous"]=='y'){
-                $sql = 'SELECT hName FROM Homeowner WHERE hWebID = "'.$id.'"';
+                $sql = 'SELECT hName FROM Homeowner WHERE hWebID = "'.$row["hWebID"].'"';
                 $nResult = $conn->query($sql);
                 $name = $nResult->fetch_assoc()["hName"];
             }else{
