@@ -1,18 +1,3 @@
-<?php
-    error_reporting(E_ALL);
-    ini_set('display_errors',1);
-    include_once 'php/helper/common.php';
-    include_once 'php/helper/db.php';
-    msg("Checking if _POST is available");
-    if(!isset($_POST['submit'])):
-        msg("No post");
-    else:
-        msg("Found post");
-        msg("User: '$_POST[name]'");
-        msg("Email: '$_POST[email]'");
-        msg("Password: '$_POST[pws]'");
-    endif;
-?>
 <!DOCTYPE html> 
 <html> 
     <head> <link rel="stylesheet" type="text/css" href="css/main.css"> <link rel="stylesheet" type="text/css" href="css/loginForm.css">
@@ -72,13 +57,15 @@
             <div class="container">
 				<label><p><b style="font-size:150%;">Sign up</b></p></label>
                 <label><b>Username</b></label>
-                <input class="formInput" type="text" placeholder="Enter Username" name="name" required>
+                <input class="formInput" type="text" placeholder="Enter Username" name="uname" required>
+                <label><b>Fullname</b></label>
+                <input class="formInput" type="text" placeholder="Enter Fullname" name="fname" required>
                 <label><b>E-mail</b></label>
                 <input class="formInput" type="email" placeholder="Enter E-mail" name="email" required>
                 <label><b>Password</b></label>
-                <input class="formInput" type="password" placeholder="Enter Password" name="pws" required>
+                <input class="formInput" type="password" placeholder="Enter Password" name="psw" required>
                 <label><b>Confirm Password</b></label>
-                <input class="formInput" type="password" placeholder="Enter Password" name="cpws" required>
+                <input class="formInput" type="password" placeholder="Confirm Password" name="cpsw" required>
 				<div class="radio-wrapper">
 					<div class="toggle_radio">
 						<input type="radio" class="toggle_option" id="first_toggle" name="toggle_option">
@@ -129,3 +116,71 @@
 	</script> 
 
 </html>
+
+<?php
+    error_reporting(E_ALL);
+    ini_set('display_errors',1);
+    include_once 'php/helper/common.php';
+    include_once 'php/helper/db.php';
+    msg("Checking if _POST is available");
+    if(!isset($_POST['submit'])):
+        msg("No post");
+    else:
+        msg("Found post");
+        msg("User: '$_POST[uname]'");
+        msg("Name: '$_POST[fname]'");
+        msg("Email: '$_POST[email]'");
+        msg("Password: '$_POST[pws]'");
+        msg("Option: '$_POST[toggle_option]'");
+        $db = dbConnect('eHandy');
+        if($_POST['uname']=='' or $_POST['fname']=='' or $_POST['email']=='' or $_POST['pws']==''){
+            error('One or more required fields were left blank.\nPlease fill them in and try again');
+            exit;
+        }
+        $sql = "SELECT COUNT(*) FROM User WHERE user = '$_POST[uname]'";
+        $result = $db->query($sql);
+        if(!$result){
+            error('A database error occurred in processing your submission.\n');
+            exit;
+        }else if($result->fetch_assoc()["COUNT(*)"]>0){
+            error('A user already exists with your chosen userid.\nPlease try another.');
+            exit;
+        }else{
+            //Insert into User
+            $sql = "INSERT INTO User SET
+                user = '$_POST[uname]',
+                psw = PASSWORD('$_POST[psw]'),
+                type = 'homeowner'";
+            if(!$db->query($sql)){
+                error('A database error occurred in processing your submission');
+                exit;
+            }
+            
+            //Get new ID
+            $sql = "SELECT id FROM User WHERE user = '$_POST[uname]'";
+            $result = $db->query($sql);
+            if(!$result){
+                //Delete from User if failed
+                $sql = "DELETE FROM User WHERE user = '$_POST[uname]'"
+                $db->query($sql);
+                error('A database error occurred in processing your submission.\n');
+                exit;
+            }
+            $id = $result->fetch_assoc()["id"];
+            
+            //Insert into Homeowner
+            $sql = "INSERT INTO Homeowner SET
+                hName = '$_POST[fname]',
+                hWebId = '$id'";
+            if(!$db->query($sql)){
+                //Delete from User if failed
+                $sql = "DELETE FROM User WHERE user = '$_POST[uname]'"
+                $db->query($sql);
+                error('A database error occurred in processing your submission');
+                exit;
+            }
+            msg("Success!");
+        }
+
+    endif;
+?>
