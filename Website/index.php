@@ -35,18 +35,17 @@
   
     <div id="login" class="modal">
         <span onclick="removeLogin()" class="close" title="Close Modal">&times;</span>
-        <form class="modal-content animate" action="/action_page.php" id="loginform" >
+        <form class="modal-content animate" action="<?=$_SERVER['PHP_SELF']?>" id="loginform" >
             <div class="container" >
 				<label><p><b style="font-size:150%;">Log in</b></p></label>
                 <label><b>Username</b></label>
-                <input class="formInput" type="text" placeholder="Enter Username" name="uname" required>
+                <input class="formInput" type="text" placeholder="Enter Username" name="suname" required>
                 <label><b>Password</b></label>
-                <input class="formInput" type="password" placeholder="Enter Password" name="pws" required>
-                <button id="loginbutton" class="formButton" type="submit">Login</button>
+                <input class="formInput" type="password" placeholder="Enter Password" name="spsw" required>
+                <button id="loginbutton" class="formButton" type="submit" name="login" value-"OK">Login</button>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
                 <button id="logincancel" class="formButton cancelbtn" type="button" onClick="removeLogin()">Cancel</button>
-                <span id="loginpw" class="psw">Forgot <a href="#">password?</a></span> 
             </div>
         </form>
     </div>
@@ -76,7 +75,7 @@
 					</div>
 					</div>
 				</div>
-                <button id="signupbutton" class="formButton" type="submit" name="submit" value="OK">Signup</button>
+                <button id="signupbutton" class="formButton" type="submit" name="signup" value="OK">Signup</button>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
                 <button id="signupcancel" class="formButton cancelbtn" type="button" onClick="removeSignup()">Cancel</button>
@@ -122,27 +121,29 @@
     ini_set('display_errors',1);
     include_once 'php/helper/common.php';
     include_once 'php/helper/db.php';
+    session_start();
     msg("Checking if _POST is available");
-    if(!isset($_POST['submit'])):
-        msg("No post");
-    else:
+    if(isset($_POST['signup'])):
         msg("Found post");
         msg("User: '$_POST[uname]'");
         msg("Name: '$_POST[fname]'");
         msg("Email: '$_POST[email]'");
-        msg("Password: '$_POST[pws]'");
+        msg("Password: '$_POST[psw]'");
         msg("Option: '$_POST[toggle_option]'");
         $db = dbConnect('eHandy');
-        if($_POST['uname']=='' or $_POST['fname']=='' or $_POST['email']=='' or $_POST['pws']==''){
+        if($_POST['uname']=='' or $_POST['fname']=='' or $_POST['email']=='' or $_POST['psw']==''){
+            unset($_POST);
             error('One or more required fields were left blank.\nPlease fill them in and try again');
             exit;
         }
         $sql = "SELECT COUNT(*) FROM User WHERE user = '$_POST[uname]'";
         $result = $db->query($sql);
         if(!$result){
+            unset($_POST);
             error('A database error occurred in processing your submission.\n');
             exit;
         }else if($result->fetch_assoc()["COUNT(*)"]>0){
+            unset($_POST);
             error('A user already exists with your chosen userid.\nPlease try another.');
             exit;
         }else{
@@ -152,6 +153,7 @@
                 psw = PASSWORD('$_POST[psw]'),
                 type = 'homeowner'";
             if(!$db->query($sql)){
+                unset($_POST);
                 error('A database error occurred in processing your submission');
                 exit;
             }
@@ -161,8 +163,9 @@
             $result = $db->query($sql);
             if(!$result){
                 //Delete from User if failed
-                $sql = "DELETE FROM User WHERE user = '$_POST[uname]'"
+                $sql = "DELETE FROM User WHERE user = '$_POST[uname]'";
                 $db->query($sql);
+                unset($_POST);
                 error('A database error occurred in processing your submission.\n');
                 exit;
             }
@@ -174,13 +177,43 @@
                 hWebId = '$id'";
             if(!$db->query($sql)){
                 //Delete from User if failed
-                $sql = "DELETE FROM User WHERE user = '$_POST[uname]'"
+                $sql = "DELETE FROM User WHERE user = '$_POST[uname]'";
                 $db->query($sql);
+                unset($_POST);
                 error('A database error occurred in processing your submission');
                 exit;
             }
+            
             msg("Success!");
+            unset($_POST);
         }
-
+        unset($_POST);
     endif;
+    $uname = isset($_POST['suname']) ? $_POST['suname'] : $_SESSION['uname'];
+    $psw = isset($_POST['spsw']) ? $_POST['spsw'] : $_SESSION['psw'];
+    if(!isset($uid)){
+        //Not signed in
+    }
+    //Check if uname and psw are valid
+    $_SESSION['uname'] = $uname;
+    $_SESSION['psw'] = $psw;
+    $db = dbConnecct("eHandy");
+    $sql = "SELECT id FROM User WHERE user = '$uid' AND psw = PASSWORD('$psw')";
+    $result = $db->query($sql);
+    if(!result){
+        unset($_POST);
+        unset($_SESSION['uname']);
+        unset($_SESSION['psw']);
+        error('A database error occured while checking your login details');
+        exit;
+    }
+    if($result->num_rows==0){
+        unset($_POST);
+        unset($_SESSION['uname']);
+        unset($_SESSION['psw']);
+        error('Your username or password is incorrect.');
+        exit;
+    }
+    //Logged in
+
 ?>
