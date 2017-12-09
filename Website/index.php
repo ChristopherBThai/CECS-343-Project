@@ -201,7 +201,7 @@
         $_SESSION['uname'] = $uname;
         $_SESSION['psw'] = $psw;
         $db = dbConnect("eHandy");
-        $sql = "SELECT id FROM User WHERE user = '$uid' AND psw = PASSWORD('$psw')";
+        $sql = "SELECT id FROM User WHERE user = '$uname' AND psw = PASSWORD('$psw')";
         $result = $db->query($sql);
         if(!result){
             unset($_POST);
