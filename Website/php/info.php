@@ -13,23 +13,40 @@
 	if($conn->connect_error){
 		die("Connection failed: ".$conn->connect_error);
 	}
-
-	$sql = 'SELECT bPhoneNum,bEmail FROM Business WHERE bName = "'.$q.'"';
+    
+    //Sets the name, picture, number, and email
+	$sql = 'SELECT bPhoneNum,bEmail,bWebID FROM Business WHERE bName = "'.$q.'"';
 	$result = $conn->query($sql);
-
+    $id;
 	if($result->num_rows>0){
 		while($row = $result->fetch_assoc()){
+            $id = $row["bWebID"];
             //Formats phone number         
 			$pNum = $row[bPhoneNum];
 			$formatNum = '+1 ('.substr($pNum, 0, 3).') '.substr($pNum, 3, 3).'-'.substr($pNum, 6, 4);
             //Creates a javascript to change the info popup
-			echo '
-            <p><b id="infoName" style="font-size:150%;">'.$q.'</b></p>
-            <p><b>Phone Number: </b><a id="infoPhone" href="#" >'.$formatNum.'</a></p>
-            <p><b>E-mail: </b><a id="infoEmail" href="#" >'.$row["bEmail"].'</a></p>
-            ';
+			echo '<script>setInfo('.$q.','.$pNum.','.$row["bEmail"].','.$id.');</script>';
 		}
-	}else{
-	}
+	}else{}
+
+    echo '<script>resetReviews();</script>';
+
+    //Sets the name, picture, number, and email
+	$sql = 'SELECT hWebID,dateReview,reviewStars,rAnonymous,rDetails FROM Review WHERE bWebID="'.$id'"';
+	$result = $conn->query($sql);
+	if($result->num_rows>0){
+		while($row = $result->fetch_assoc()){
+            $name;
+            if($row[rAnonymous]=='y'){
+                $sql = 'SELECT bName FROM Business WHERE bWebID = "'.$id.'"';
+                $nResult = $conn->query($sql);
+                $name = $nResult->fetch_assoc()["bName"];
+            }else{
+                $name = "Anonymous";
+            }
+            echo '<script>addReview('.$name.','.$row["dateReview"].','.$row["rDetails"].','.$row["reviewStars"].');</script>';
+		}
+	}else{}
+
     mysqli_close($conn);
 ?>

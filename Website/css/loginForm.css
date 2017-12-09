@@ -92,9 +92,16 @@ span.psw {
     }
 }
 
+.infoimage {
+    width: 150px;
+    float: right;
+    border: 1px solid brown;
+    
+}
+
 /* ================ MODAL ================== */
 .modal {
-    display: none;
+    display: blo;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -147,7 +154,7 @@ span.psw {
     to {transform: scale(1)}
 }
 
-/* Radio buttons */
+/* =================== Radio buttons =================== */
 
 .toggle_radio{
   position: relative;
@@ -214,4 +221,6 @@ span.psw {
   background: rgba(0,0,200,.5);
   left: 139px;
 }
+
+/* =================== Reviews =================== */
 
