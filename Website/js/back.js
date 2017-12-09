@@ -208,6 +208,6 @@ function reloadPage(){
     window.location.reload();
 }
 
-function loggedin(name){
-    document.getElementById('buttons').innerHTML = "<p>Welcome back, "+name+"!";
+function welcome(name){
+    document.getElementById('buttons').innerHTML = "<p>Welcome back, "+name+"!</p>";
 }

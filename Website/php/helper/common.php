@@ -31,7 +31,7 @@
             <head>
                 <script language="JavaScript">
                     <!--
-                        loggedin("<?=$msg?>");
+                        welcome("<?=$msg?>");
                     //-->
                 </script>
             </head>
