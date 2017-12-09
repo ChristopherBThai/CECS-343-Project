@@ -194,6 +194,7 @@
     $psw = isset($_POST['spsw']) ? $_POST['spsw'] : $_SESSION['psw'];
     if(!isset($uid)){
         //Not signed in
+        msg("'$uname'");
         exit;
     }else{
         //Check if uname and psw are valid
@@ -217,6 +218,8 @@
             exit;
         }
         //Logged in
+        unset($_POST);
+        msg("Logged in");
     }
 
 ?>
