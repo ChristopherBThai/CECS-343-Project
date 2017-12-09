@@ -37,7 +37,7 @@
   
     <div id="login" class="modal">
         <span onclick="removeLogin()" class="close" title="Close Modal">&times;</span>
-        <form class="modal-content animate" action="<?=$_SERVER['PHP_SELF']?>" id="loginform" >
+        <form method="post" class="modal-content animate" action="<?=$_SERVER['PHP_SELF']?>" id="loginform" >
             <div class="container" >
 				<label><p><b style="font-size:150%;">Log in</b></p></label>
                 <label><b>Username</b></label>
