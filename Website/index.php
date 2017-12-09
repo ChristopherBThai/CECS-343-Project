@@ -15,7 +15,7 @@
     <div class="" id="blurable">
         <!-- Login Buttons -->
         <div class="btn-padding">
-            <div class="btn-group">
+            <div id="buttons" class="btn-group">
                 <button onClick="showLogin()">Log in</button>
                 <button onClick="showSignup()">Sign up</button>
             </div>

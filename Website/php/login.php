@@ -12,7 +12,7 @@
         $db = dbConnect("eHandy");
         $sql = "SELECT id FROM User WHERE user = '$uname' AND psw = PASSWORD('$psw')";
         $result = $db->query($sql);
-        if(!result){
+        if(!$result){
             unset($_POST);
             unset($_SESSION['uname']);
             unset($_SESSION['psw']);
@@ -29,5 +29,16 @@
         //Logged in
         unset($_POST);
         msg("Logged in");
+        $sql = "SELECT hName FROM Homeowner WHERE hWebID = '$result->fetch_assoc()[id]'";
+        $result = $db->query($sql);
+        if($result){
+            welcome($result->fetch_assoc()["hName"]);
+        }else{
+            unset($_POST);
+            unset($_SESSION['uname']);
+            unset($_SESSION['psw']);
+            error('A database error occured while checking your login details');
+            exit;
+        }
     }
 ?>

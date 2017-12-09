@@ -26,3 +26,16 @@
         </html>
     <?php }
 
+    function welcome($msg){?>
+        <html>
+            <head>
+                <script language="JavaScript">
+                    <!--
+                        loggedin("<?=$msg?>");
+                    //-->
+                </script>
+            </head>
+            <body></body>
+        </html>
+    <?php }
+?>
