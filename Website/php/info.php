@@ -48,7 +48,9 @@
             }
             echo '<script>addReview("'.$name.'","'.$row["dateReview"].'","'.$row["rDetails"].'","'.$row["reviewStars"].'");</script>';
 		}
-	}else{}
+	}else{
+        echo '<script>noReviews();</script>';
+    }
 
     mysqli_close($conn);
 ?>

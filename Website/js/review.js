@@ -5,6 +5,10 @@ function addReview(name,date,rev,stars){
     container.appendChild(review);
 }
 
+function noReviews(){
+    document.getElementById("reviews").innerHTML="<p style='text-align:center;'>No Reviews</p>";
+}
+
 function resetReviews(){
     document.getElementById("reviews").innerHTML="";
 }
