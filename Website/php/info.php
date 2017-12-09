@@ -34,15 +34,15 @@
     echo '<script>resetReviews();</script>';
 
     //Sets the name, picture, number, and email
-	$sql = 'SELECT hWebID,dateReview,reviewStars,rAnonymous,rDetails FROM Review WHERE bWebID="'.$id'"';
+	$sql = 'SELECT hWebID,dateReview,reviewStars,rAnonymous,rDetails FROM Review WHERE bWebID="'.$id.'"';
 	$result = $conn->query($sql);
 	if($result->num_rows>0){
 		while($row = $result->fetch_assoc()){
             $name;
             if($row[rAnonymous]=='y'){
-                $sql = 'SELECT bName FROM Business WHERE bWebID = "'.$id.'"';
+                $sql = 'SELECT hName FROM Homeowner WHERE hWebID = "'.$id.'"';
                 $nResult = $conn->query($sql);
-                $name = $nResult->fetch_assoc()["bName"];
+                $name = $nResult->fetch_assoc()["hName"];
             }else{
                 $name = "Anonymous";
             }
