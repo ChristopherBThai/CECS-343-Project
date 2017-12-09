@@ -1,5 +1,7 @@
 <?php
     //php that gets a business' info based off their name
+    error_reporting(E_ALL);
+    ini_set('display_errors',1);
 
     $q = $_GET["q"];
     

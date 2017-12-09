@@ -101,7 +101,7 @@ span.psw {
 
 /* ================ MODAL ================== */
 .modal {
-    display: blo;
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
