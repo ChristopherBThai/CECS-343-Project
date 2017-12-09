@@ -1,16 +1,16 @@
 <?php
     error_reporting(E_ALL);
     ini_set('display_errors',1);
-    include_once 'common.php';
-    include_once 'db.php';
+    include_once 'php/helper/common.php';
+    include_once 'php/helper/db.php';
     msg("Checking if _POST is available");
     if(!isset($_POST['submit'])):
         msg("No post");
     else:
         msg("Found post");
-        msg("User: '$_POST['name']'");
-        msg("Email: '$_POST['email']'");
-        msg("Password: '$_POST['pws']'");
+        msg("User: '$_POST[name]'");
+        msg("Email: '$_POST[email]'");
+        msg("Password: '$_POST[pws]'");
     endif;
 ?>
 <!DOCTYPE html> 

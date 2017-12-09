@@ -4,7 +4,7 @@
             <head>
                 <script language="JavaScript">
                     <!--
-                        alert("<?=?msg?>");
+                        alert("<?=$msg?>");
                         history.back();
                     //-->
                 </script>
@@ -18,7 +18,7 @@
             <head>
                 <script language="JavaScript">
                     <!--
-                        console.log("<?=?msg?>");
+                        console.log("<?=$msg?>");
                     //-->
                 </script>
             </head>
