@@ -6,7 +6,7 @@ function addReview(name,date,rev,stars){
 }
 
 function resetReviews(){
-    document.getElementById.innerHTML="";
+    document.getElementById("reviews").innerHTML="";
 }
 
 function setInfo(name,num,mail,id){
