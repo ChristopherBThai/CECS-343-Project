@@ -28,7 +28,7 @@
 			while($row = $result->fetch_assoc())
 			{
                 //Javascript to insert results
-			    echo '<script type="text/javascript">result("'.$row["typeName"].'","'.$row["bName"].'",'.$row["bWebID"]')</script>';
+			    echo '<script type="text/javascript">result("'.$row["typeName"].'","'.$row["bName"].'",'.$row["bWebID"].')</script>';
 		    }
 		}
 		else
