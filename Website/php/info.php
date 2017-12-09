@@ -24,10 +24,10 @@
 		while($row = $result->fetch_assoc()){
             $id = $row["bWebID"];
             //Formats phone number         
-			$pNum = $row[bPhoneNum];
+			$pNum = $row["bPhoneNum"];
 			$formatNum = '+1 ('.substr($pNum, 0, 3).') '.substr($pNum, 3, 3).'-'.substr($pNum, 6, 4);
             //Creates a javascript to change the info popup
-			echo '<script>setInfo('.$q.','.$pNum.','.$row["bEmail"].','.$id.');</script>';
+			echo '<script>setInfo("'.$q.'","'.$formatNum.'","'.$row["bEmail"].'","'.$id.'");</script>';
 		}
 	}else{}
 
@@ -46,7 +46,7 @@
             }else{
                 $name = "Anonymous";
             }
-            echo '<script>addReview('.$name.','.$row["dateReview"].','.$row["rDetails"].','.$row["reviewStars"].');</script>';
+            echo '<script>addReview("'.$name.'","'.$row["dateReview"].'","'.$row["rDetails"].'","'.$row["reviewStars"].'");</script>';
 		}
 	}else{}
 
