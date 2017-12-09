@@ -14,14 +14,14 @@
 	    margin: 90px;
 	    border: solid rgba(130,130,130,0) 1px;
     	color: rgba(120,70,70,0);
-    	background: rgba(0,0,0,0);
+    	/*background: rgba(0,0,0,0);*/
 		height: 10px;
 		width: 10px;
 	}to{
 	    margin: 10px;
 	    border: solid rgba(130,130,130,1) 1px;
     	color: rgba(120,70,70,1);
-    	background: rgba(255,230,230,1);
+/*    	background: rgba(255,230,230,1);*/
 		height: 200px;
 		width: 200px;
 	}
@@ -89,7 +89,8 @@
     margin: 90px;
     border: solid rgba(130,130,130,0) 1px;
     color: rgba(120,70,70,0);
-    background: rgba(0,0,0,0);
+	background-size: cover;
+	vertical-align: bottom;
     height: 10px;
     width: 10px;
 	word-wrap: break-word;
@@ -100,6 +101,13 @@
 	position: relative;
 	animation-name: appear-result-box;
 	animation-duration: 1s;
+}
+
+.result-box-text {
+	color: #fff;
+	padding-top: 76%;
+	float: left;
+	vertical-align: bottom;
 }
 
 .result-box-overlay button{
