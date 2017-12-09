@@ -25,14 +25,15 @@
         //Search based off of every word
 		//$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE typeName LIKE '%".$s[$i]."%' OR bName LIKE '%".$s[$i]."%'";
 		//$sql = "SELECT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE INSTR('{$q}', bName)>0 OR INSTR('{$q}', typeName)>0";	
-		$sql = "SELECT DISTINCT bName,typeName,bWebID FROM Business NATURAL JOIN BusinessType WHERE INSTR('{$q}', bName)>0 OR INSTR('{$q}', typeName)>0 OR bName LIKE '%{$q}%' OR typeName LIKE '%{$q}%'";			
+		$sql = "SELECT DISTINCT bName,typeName FROM Business NATURAL JOIN BusinessType WHERE INSTR('{$q}', bName)>0 
+				OR INSTR('{$q}', typeName)>0 OR bName LIKE '%{$q}%' OR typeName LIKE '%{$q}%'";			
 		$result = $conn->query($sql);
 		if($result->num_rows>0)
 		{
 			while($row = $result->fetch_assoc())
 			{
                 //Javascript to insert results
-			    echo '<script type="text/javascript">result("'.$row["typeName"].'","'.$row["bName"].'",'.$row["bWebID"]')</script>';
+			    echo '<script type="text/javascript">result("'.$row["typeName"].'","'.$row["bName"].'")</script>';
 		    }
 		}
 		else
@@ -44,3 +45,4 @@
 	echo '<script type="text/javascript">resetTimers()</script>';
     mysqli_close($conn);
 ?>
+
