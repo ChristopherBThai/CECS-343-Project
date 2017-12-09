@@ -119,107 +119,11 @@
 </html>
 
 <?php
-    error_reporting(E_ALL);
-    ini_set('display_errors',1);
     include_once 'php/helper/common.php';
     include_once 'php/helper/db.php';
-    msg("Checking if _POST is available");
     if(isset($_POST['signup'])):
-        msg("Found post");
-        msg("User: '$_POST[uname]'");
-        msg("Name: '$_POST[fname]'");
-        msg("Email: '$_POST[email]'");
-        msg("Password: '$_POST[psw]'");
-        msg("Option: '$_POST[toggle_option]'");
-        $db = dbConnect('eHandy');
-        if($_POST['uname']=='' or $_POST['fname']=='' or $_POST['email']=='' or $_POST['psw']==''){
-            unset($_POST);
-            error('One or more required fields were left blank.\nPlease fill them in and try again');
-            exit;
-        }
-        $sql = "SELECT COUNT(*) FROM User WHERE user = '$_POST[uname]'";
-        $result = $db->query($sql);
-        if(!$result){
-            unset($_POST);
-            error('A database error occurred in processing your submission.\n');
-            exit;
-        }else if($result->fetch_assoc()["COUNT(*)"]>0){
-            unset($_POST);
-            error('A user already exists with your chosen userid.\nPlease try another.');
-            exit;
-        }else{
-            //Insert into User
-            $sql = "INSERT INTO User SET
-                user = '$_POST[uname]',
-                psw = PASSWORD('$_POST[psw]'),
-                type = 'homeowner'";
-            if(!$db->query($sql)){
-                unset($_POST);
-                error('A database error occurred in processing your submission');
-                exit;
-            }
-            
-            //Get new ID
-            $sql = "SELECT id FROM User WHERE user = '$_POST[uname]'";
-            $result = $db->query($sql);
-            if(!$result){
-                //Delete from User if failed
-                $sql = "DELETE FROM User WHERE user = '$_POST[uname]'";
-                $db->query($sql);
-                unset($_POST);
-                error('A database error occurred in processing your submission.\n');
-                exit;
-            }
-            $id = $result->fetch_assoc()["id"];
-            
-            //Insert into Homeowner
-            $sql = "INSERT INTO Homeowner SET
-                hName = '$_POST[fname]',
-                hWebId = '$id'";
-            if(!$db->query($sql)){
-                //Delete from User if failed
-                $sql = "DELETE FROM User WHERE user = '$_POST[uname]'";
-                $db->query($sql);
-                unset($_POST);
-                error('A database error occurred in processing your submission');
-                exit;
-            }
-            
-            msg("Success!");
-            unset($_POST);
-        }
-        unset($_POST);
+        include 'php/signup.php';
     endif;
-    $uname = isset($_POST['suname']) ? $_POST['suname'] : $_SESSION['uname'];
-    $psw = isset($_POST['spsw']) ? $_POST['spsw'] : $_SESSION['psw'];
-    if(!isset($uname)){
-        //Not signed in
-        msg("'$uname'");
-        exit;
-    }else{
-        //Check if uname and psw are valid
-        $_SESSION['uname'] = $uname;
-        $_SESSION['psw'] = $psw;
-        $db = dbConnect("eHandy");
-        $sql = "SELECT id FROM User WHERE user = '$uname' AND psw = PASSWORD('$psw')";
-        $result = $db->query($sql);
-        if(!result){
-            unset($_POST);
-            unset($_SESSION['uname']);
-            unset($_SESSION['psw']);
-            error('A database error occured while checking your login details');
-            exit;
-        }
-        if($result->num_rows==0){
-            unset($_POST);
-            unset($_SESSION['uname']);
-            unset($_SESSION['psw']);
-            error('Your username or password is incorrect.');
-            exit;
-        }
-        //Logged in
-        unset($_POST);
-        msg("Logged in");
-    }
+    include 'php/login.php';
 
 ?>
