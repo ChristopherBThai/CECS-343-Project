@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html> 
 <html> 
     <head> <link rel="stylesheet" type="text/css" href="css/main.css"> <link rel="stylesheet" type="text/css" href="css/loginForm.css">
@@ -121,7 +123,6 @@
     ini_set('display_errors',1);
     include_once 'php/helper/common.php';
     include_once 'php/helper/db.php';
-    session_start();
     msg("Checking if _POST is available");
     if(isset($_POST['signup'])):
         msg("Found post");
@@ -197,7 +198,7 @@
     //Check if uname and psw are valid
     $_SESSION['uname'] = $uname;
     $_SESSION['psw'] = $psw;
-    $db = dbConnecct("eHandy");
+    $db = dbConnect("eHandy");
     $sql = "SELECT id FROM User WHERE user = '$uid' AND psw = PASSWORD('$psw')";
     $result = $db->query($sql);
     if(!result){
