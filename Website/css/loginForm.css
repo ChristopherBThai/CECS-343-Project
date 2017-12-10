@@ -93,9 +93,9 @@ span.psw {
 }
 
 .infoimage {
-    width: 150px;
+    height: 150px;
     float: right;
-    border: 1px solid brown;
+    border: 1px solid rgba(0,0,0,.4);
     
 }
 
@@ -120,6 +120,7 @@ span.psw {
     margin: 5px auto;
     border: 1px solid #888;
     width: 40%;
+    margin-bottom: 130px;
 }
 
 /* Close button */
