@@ -59,26 +59,26 @@ INSERT INTO Review
 -- Kunal's review section --
 INSERT INTO Review
 (hWebID, bWebID, typeName, datereview, reviewStars, rAnonymous, rDetails) VALUES
-(2772, 1114, '','2012-03-20', 4, y, ''),
-(2962, 1116, '','2014-06-24', 2, n, ''),
-(2962, 1147, '','2012-08-19', 5, y, ''),
-(2962, 1122, '','2017-03-24', 2, n, ''),
-(4805, 1168, '','2012-04-02', 3, n, ''),
-(4805, 1158, '','2013-10-29', 0, y, ''),
-(2772, 1175, '','2016-03-21', 5, y, ''),
-(2772, 1115, '','2017-05-30', 1, y, ''),
-(9054, 1123, '','2012-07-24', 5, y, ''),
-(9054, 1164, '','2014-01-14', 5, y, ''),
-(9054, 1151, '','2017-03-25', 5, y, ''),
-(9054, 1147, '','2017-09-27', 4, y, ''),
-(9054, 1130, '','2012-10-01', 3, y, ''),
-(9054, 1156, '','2012-06-20', 4, y, ''),
-(4805, 1157, '','2012-08-20', 4, n, ''),
-(2962, 1164, '','2017-11-16', 2, y, ''),
-(2962, 1117, '','2016-06-11', 3, y, ''),
-(2772, 1161, '','2015-08-01', 5, n, ''),
-(2962, 1154, '','2015-12-20', 0, y, ''),
-(2772, 1168, '','2012-02-06', 2, y, '');
+(2772, 1114, 'Plumber','2012-03-20', 4, y, 'Everything went well, except his uniform showed his crack.'),
+(2962, 1116, 'Maid','2014-06-24', 2, n, 'They sent a big middle aged man in a french maid outfit...'),
+(2962, 1147, 'Plumber','2012-08-19', 5, y, 'Absolutely perfect! My pipes are clean ;)'),
+(2962, 1122, 'Contractor','2017-03-24', 2, n, '5 people got injured and the project finished late.'),
+(4805, 1168, 'Plumber','2012-04-02', 3, n, 'This guy was average. Did a good job but wasn't taking it seriously.'),
+(4805, 1158, 'Plumber','2013-10-29', 0, y, 'The plumber didn't show up on time for the appointment'),
+(2772, 1175, 'Hero','2016-03-21', 5, y, 'I was sooo glad they came! Saved the day for sure!'),
+(2772, 1115, 'Auto Repair','2017-05-30', 1, y, 'They stripped my car and sold the parts!!! But they gave me a 10% off coupon for next time.'),
+(9054, 1123, 'Food Delivery','2012-07-24', 5, y, 'Super quick delivery and the food was in perfect shape!'),
+(9054, 1164, 'Electrician','2014-01-14', 5, y, 'Work was very well done, they fixed my outlet in no time!'),
+(9054, 1151, 'Auto Repair','2017-03-25', 5, y, 'They had a lot of cheap parts they acquired recently, very beneficial for me!'),
+(9054, 1147, 'Plumber','2017-09-27', 4, y, 'The guy was amazing! He drained my gutters well!'),
+(9054, 1130, 'Dry Cleaning','2012-10-01', 3, y, 'The service was mediocre, but my clothes were clean'),
+(9054, 1156, 'Plumber','2012-06-20', 4, y, 'They did an awesome job and were really professional'),
+(4805, 1157, 'Auto Repair','2012-08-20', 4, n, 'They did a bang up job on my car, but were a little pricey!'),
+(2962, 1164, 'Electrician','2017-11-16', 2, y, 'They switched up all the switches in my house! Now my bedroom light switch controls the garbage disposal!'),
+(2962, 1117, 'Dog Trainer','2016-06-11', 3, y, 'My dog only learned half the tricks they advertised to teach, but he does them well!'),
+(2772, 1161, 'Plumber','2015-08-01', 5, n, 'Hey, if you ever need a quick service plumber who make the pricing clear to you, these are the people! '),
+(2962, 1154, 'Electrician','2015-12-20', 0, y, 'Gonna sue, they left all the wires hanging out during their lunch and my kid got zapped!'),
+(2772, 1168, 'Plumber','2012-02-06', 2, y, 'I think my pipes are more clogged than before he got here...');
 
 -- Mathew's review section -- 
 INSERT INTO Review
