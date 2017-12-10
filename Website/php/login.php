@@ -4,7 +4,6 @@
     if(!isset($uname)){
         //Not signed in
         msg("'$uname'");
-        exit;
     }else{
         //Check if uname and psw are valid
         $_SESSION['uname'] = $uname;
@@ -17,14 +16,12 @@
             unset($_SESSION['uname']);
             unset($_SESSION['psw']);
             error('A database error occured while checking your login details');
-            exit;
         }
         if($lresult->num_rows==0){
             unset($_POST);
             unset($_SESSION['uname']);
             unset($_SESSION['psw']);
             error('Your username or password is incorrect.');
-            exit;
         }
         //Logged in
         unset($_POST);
@@ -40,7 +37,6 @@
             unset($_SESSION['uname']);
             unset($_SESSION['psw']);
             error('A database error occured while checking your login details');
-            exit;
         }
     }
 ?>
