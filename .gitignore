@@ -15,3 +15,4 @@ tags
 #Ignoring Aingty's Mac files & VScode setting
 *.pages
 *.vs*
+temp.py
