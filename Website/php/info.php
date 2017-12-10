@@ -28,6 +28,8 @@
 	$sql = 'SELECT hWebID,dateReview,reviewStars,rAnonymous,rDetails FROM Review WHERE bWebID="'.$id.'";';
 	$result = $conn->query($sql);
 	if($result->num_rows>0){
+        
+        //Loops through all the reviews and displays them
 		while($row = $result->fetch_assoc()){
             $name;
             if($row["rAnonymous"]=='y'){
@@ -39,17 +41,15 @@
             }
             echo '<script>addReview("'.$name.'","'.$row["dateReview"].'","'.$row["rDetails"].'","'.$row["reviewStars"].'");</script>';
 		}
-	}else{
-        echo '<script>noReviews();</script>';
-    }
-
-    //Sets the avg review score
-    $sql = 'SELECT avg(reviewStars) FROM Review WHERE bWebID="'.$id.'";';
-	$result = $conn->query($sql);
-	if($result->num_rows>0){
+        
+        //Sets the avg review score
+        $sql = 'SELECT avg(reviewStars) FROM Review WHERE bWebID="'.$id.'";';
+	    $result = $conn->query($sql);
 		$avg = $result->fetch_assoc()["avg(reviewStars)"];
         echo '<script>setAvg("'.$avg.'")';
 	}else{
+        //If no reviews, display that
+        echo '<script>noReviews();</script>';
         echo '<script>resetAvg();</script>';
     }
 
