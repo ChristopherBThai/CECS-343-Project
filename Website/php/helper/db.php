@@ -1,7 +1,7 @@
 <?php //db.php
     $dbhost = "localhost";
-    $dbuser = "ehandy";
-    $dbpass = "jayden";
+    $dbuser = "ehandler";
+    $dbpass = "ehandpass";
 
     function dbConnect($db=""){
         global $dbhost, $dbuser, $dbpass;
@@ -10,5 +10,8 @@
         if(!$dbcnx){
             msg("Database unavailable");
         }
+	    if($dbcnx->connect_error){
+		    die("Connection failed: ".$dbcnx->connect_error);
+	    }
         return $dbcnx;
     }

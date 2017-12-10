@@ -9,18 +9,15 @@
     if($_POST['uname']=='' or $_POST['fname']=='' or $_POST['email']=='' or $_POST['psw']==''){
         unset($_POST);
         error('One or more required fields were left blank.\nPlease fill them in and try again');
-        exit;
     }
     $sql = "SELECT COUNT(*) FROM User WHERE user = '$_POST[uname]'";
     $result = $db->query($sql);
     if(!$result){
         unset($_POST);
         error('A database error occurred in processing your submission.\n');
-        exit;
     }else if($result->fetch_assoc()["COUNT(*)"]>0){
         unset($_POST);
         error('A user already exists with your chosen userid.\nPlease try another.');
-        exit;
     }else{
         //Insert into User
         $sql = "INSERT INTO User SET
@@ -30,7 +27,6 @@
         if(!$db->query($sql)){
             unset($_POST);
             error('A database error occurred in processing your submission');
-            exit;
         }
             
         //Get new ID
@@ -42,7 +38,6 @@
             $db->query($sql);
             unset($_POST);
             error('A database error occurred in processing your submission.\n');
-            exit;
         }
         $id = $result->fetch_assoc()["id"];
             
@@ -56,7 +51,6 @@
             $db->query($sql);
             unset($_POST);
             error('A database error occurred in processing your submission');
-            exit;
         }
             
         msg("Success!");

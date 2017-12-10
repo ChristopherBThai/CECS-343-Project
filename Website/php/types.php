@@ -1,18 +1,11 @@
 
 <?php
     //php that will grab all business type names (no limit)
+    include_once 'helper/common.php';
+    include_once 'helper/db.php';
 
-	$servername="localhost";
-	$username="ehandy";
-	$password="jayden";
-	$dbname="eHandy";
-
-	$conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = dbConnect("eHandy");
 	
-	if($conn->connect_error){
-		die("Connection failed: ".$conn->connect_error);
-	}
-
 	$sql = 'SELECT DISTINCT typeName FROM BusinessType';
 	$result = $conn->query($sql);
 
@@ -25,7 +18,6 @@
             </script>
             ';
 		}
-	}else{
 	}
     mysqli_close($conn);
 ?>
