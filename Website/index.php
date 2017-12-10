@@ -126,8 +126,9 @@
 
 </html>
 
-<?
+<?php
     if($lresult){
         welcome($lresult->fetch_assoc()["hName"]);
     }
+?>
 
