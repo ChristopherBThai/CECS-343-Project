@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    include_once 'php/helper/common.php';
+    include_once 'php/helper/db.php';
+    if(isset($_POST['signup'])):
+        include 'php/signup.php';
+    endif;
+    include 'php/login.php';
+?>
 
 <!DOCTYPE html> 
 <html> 
@@ -118,12 +126,8 @@
 
 </html>
 
-<?php
-    include_once 'php/helper/common.php';
-    include_once 'php/helper/db.php';
-    if(isset($_POST['signup'])):
-        include 'php/signup.php';
-    endif;
-    include 'php/login.php';
+<?
+    if($lresult){
+        welcome($lresult->fetch_assoc()["hName"]);
+    }
 
-?>
