@@ -1,4 +1,8 @@
-<!DOCTYPE html> <html> <head> <link rel="stylesheet" type="text/css" href="css/main.css"> <link rel="stylesheet" type="text/css" href="css/loginForm.css">
+<?php session_start(); ?>
+
+<!DOCTYPE html> 
+<html> 
+    <head> <link rel="stylesheet" type="text/css" href="css/main.css"> <link rel="stylesheet" type="text/css" href="css/loginForm.css">
         <link rel="stylesheet" type="text/css" href="css/search.css">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/search.js"></script>
@@ -11,7 +15,7 @@
     <div class="" id="blurable">
         <!-- Login Buttons -->
         <div class="btn-padding">
-            <div class="btn-group">
+            <div id="buttons" class="btn-group">
                 <button onClick="showLogin()">Log in</button>
                 <button onClick="showSignup()">Sign up</button>
             </div>
@@ -33,35 +37,36 @@
   
     <div id="login" class="modal">
         <span onclick="removeLogin()" class="close" title="Close Modal">&times;</span>
-        <form class="modal-content animate" action="/action_page.php" id="loginform" >
+        <form method="post" class="modal-content animate" action="<?=$_SERVER['PHP_SELF']?>" id="loginform" >
             <div class="container" >
 				<label><p><b style="font-size:150%;">Log in</b></p></label>
                 <label><b>Username</b></label>
-                <input class="formInput" type="text" placeholder="Enter Username" name="uname" required>
+                <input class="formInput" type="text" placeholder="Enter Username" name="suname" required>
                 <label><b>Password</b></label>
-                <input class="formInput" type="password" placeholder="Enter Password" name="pws" required>
-                <button id="loginbutton" class="formButton" type="submit">Login</button>
+                <input class="formInput" type="password" placeholder="Enter Password" name="spsw" required>
+                <button id="loginbutton" class="formButton" type="submit" name="login" value-"OK">Login</button>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
                 <button id="logincancel" class="formButton cancelbtn" type="button" onClick="removeLogin()">Cancel</button>
-                <span id="loginpw" class="psw">Forgot <a href="#">password?</a></span> 
             </div>
         </form>
     </div>
 
     <div id="signup" class="modal">
         <span onclick="removeSignup()" class="close" title="Close Modal">&times;</span>
-        <form class="modal-content animate" action="/action_page.php" id="signupform">
+        <form method="post" class="modal-content animate" action="<?=$_SERVER['PHP_SELF']?>" id="signupform">
             <div class="container">
 				<label><p><b style="font-size:150%;">Sign up</b></p></label>
                 <label><b>Username</b></label>
                 <input class="formInput" type="text" placeholder="Enter Username" name="uname" required>
+                <label><b>Fullname</b></label>
+                <input class="formInput" type="text" placeholder="Enter Fullname" name="fname" required>
                 <label><b>E-mail</b></label>
                 <input class="formInput" type="email" placeholder="Enter E-mail" name="email" required>
                 <label><b>Password</b></label>
-                <input class="formInput" type="password" placeholder="Enter Password" name="pws" required>
+                <input class="formInput" type="password" placeholder="Enter Password" name="psw" required>
                 <label><b>Confirm Password</b></label>
-                <input class="formInput" type="password" placeholder="Enter Password" name="cpws" required>
+                <input class="formInput" type="password" placeholder="Confirm Password" name="cpsw" required>
 				<div class="radio-wrapper">
 					<div class="toggle_radio">
 						<input type="radio" class="toggle_option" id="first_toggle" name="toggle_option">
@@ -72,7 +77,7 @@
 					</div>
 					</div>
 				</div>
-                <button id="signupbutton" class="formButton" type="submit">Signup</button>
+                <button id="signupbutton" class="formButton" type="submit" name="signup" value="OK">Signup</button>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
                 <button id="signupcancel" class="formButton cancelbtn" type="button" onClick="removeSignup()">Cancel</button>
@@ -108,7 +113,17 @@
 	<script type="text/javascript">
         setTimeout(initBar(),3000);
 		setPopupClose();
-		setRunawayButton();
+		//setRunawayButton();
 	</script> 
 
 </html>
+
+<?php
+    include_once 'php/helper/common.php';
+    include_once 'php/helper/db.php';
+    if(isset($_POST['signup'])):
+        include 'php/signup.php';
+    endif;
+    include 'php/login.php';
+
+?>

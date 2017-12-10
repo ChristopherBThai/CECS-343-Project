@@ -207,3 +207,7 @@ function setRunawayButton(){
 function reloadPage(){
     window.location.reload();
 }
+
+function welcome(name){
+    document.getElementById('buttons').innerHTML = "<p>Welcome back, "+name+"!</p>";
+}
