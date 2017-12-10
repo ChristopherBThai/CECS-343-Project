@@ -18,7 +18,7 @@ function setInfo(name,num,mail,id){
 }
 
 function setAvg(avg){
-    document.getElementById("reviewtitle").innerHTML = "<b><a style='float:right;font-size:120%;'>"+avg+"/5 Rating</a></b><b>Reviews</b>";
+    document.getElementById("reviewtitle").innerHTML = "<a style='float:right;'>"+avg+"/5 Rating</a><b>Reviews</b>";
 }
 
 function resetAvg(){
