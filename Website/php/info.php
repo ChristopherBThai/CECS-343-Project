@@ -1,21 +1,12 @@
 <?php
     //php that gets a business' info based off their name
-    error_reporting(E_ALL);
-    ini_set('display_errors',1);
+    include_once 'common.php';
+    include_once 'db.php';
 
     $q = $_GET["q"];
     
-	$servername="localhost";
-	$username="ehandy";
-	$password="jayden";
-	$dbname="eHandy";
-
-	$conn = new mysqli($servername, $username, $password, $dbname);
+	$conn = dbConnect("eHandy");
 	
-	if($conn->connect_error){
-		die("Connection failed: ".$conn->connect_error);
-	}
-    
     //Sets the name, picture, number, and email
 	$sql = 'SELECT bPhoneNum,bEmail,bWebID FROM Business WHERE bName = "'.$q.'";';
 	$result = $conn->query($sql);

@@ -1,21 +1,10 @@
 <?php
+    include_once 'common.php';
+    include_once 'db.php';
     //PHP to get all the businesses baseded off their name and types
     $q = $_GET["q"];
-    
-	echo '<script>console.log("Starting php")</script>';
-	$servername="localhost";
-	$username="ehandy";
-	$password="jayden";
-	$dbname="eHandy";
-	echo '<script>console.log("Starting connection")</script>';
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	
-	echo '<script>console.log("Checking connection")</script>';
-	if($conn->connect_error)
-	{
-		echo '<script>console.log("Connection failed")</script>';
-		die("Connection failed: ".$conn->connect_error);
-	}
+
+	$conn = dbConnect("eHandy");
 	
 	echo '<script>console.log("Connection success!")</script>';
         //Search based off of every word

@@ -1,13 +1,10 @@
 
 <?php
     //php that will grab all business type names (no limit)
+    include_once 'common.php';
+    include_once 'db.php';
 
-	$servername="localhost";
-	$username="ehandy";
-	$password="jayden";
-	$dbname="eHandy";
-
-	$conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = dbConnect("eHandy");
 	
 	if($conn->connect_error){
 		die("Connection failed: ".$conn->connect_error);

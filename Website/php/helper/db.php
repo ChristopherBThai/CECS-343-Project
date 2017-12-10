@@ -1,7 +1,7 @@
 <?php //db.php
     $dbhost = "localhost";
-    $dbuser = "ehandy";
-    $dbpass = "jayden";
+    $dbuser = "ehandler";
+    $dbpass = "ehandpass";
 
     function dbConnect($db=""){
         global $dbhost, $dbuser, $dbpass;
