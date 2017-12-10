@@ -10,5 +10,8 @@
         if(!$dbcnx){
             msg("Database unavailable");
         }
+	    if($dbcnx->connect_error){
+		    die("Connection failed: ".$dbcnx->connect_error);
+	    }
         return $dbcnx;
     }

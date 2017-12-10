@@ -1,7 +1,7 @@
 <?php
     //php that gets a business' info based off their name
-    include_once 'common.php';
-    include_once 'db.php';
+    include_once 'helper/common.php';
+    include_once 'helper/db.php';
 
     $q = $_GET["q"];
     
@@ -20,7 +20,7 @@
             //Creates a javascript to change the info popup
 			echo '<script>setInfo("'.$q.'","'.$formatNum.'","'.$row["bEmail"].'","'.$id.'");</script>';
 		}
-	}else{}
+	}
 
     echo '<script>resetReviews();</script>';
 
