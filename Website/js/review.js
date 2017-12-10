@@ -16,3 +16,11 @@ function resetReviews(){
 function setInfo(name,num,mail,id){
     document.getElementById("infoLoc").innerHTML = "<p><img src='pictures/"+id+".jpg' class='infoimage'><br><b id='infoName' style='font-size:150%;'>"+name+"</b></p><p><b>Phone Number: </b><a id='infoPhone' href='#' >"+num+"</a></p><p><b>E-mail: </b><a id='infoEmail' href='#' >"+mail+"</a></p><br>";
 }
+
+function setAvg(avg){
+    document.getElementById("reviewtitle").innerHTML = "<b><a style='float:right;font-size:120%;'>"+avg+"/5 Rating</a></b><b>Reviews</b>";
+}
+
+function resetAvg(){
+    document.getElementById("reviewtitle").innerHTML = "<b>Reviews</b>";
+}

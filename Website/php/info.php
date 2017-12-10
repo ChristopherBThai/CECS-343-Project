@@ -17,7 +17,7 @@
 	}
     
     //Sets the name, picture, number, and email
-	$sql = 'SELECT bPhoneNum,bEmail,bWebID FROM Business WHERE bName = "'.$q.'"';
+	$sql = 'SELECT bPhoneNum,bEmail,bWebID FROM Business WHERE bName = "'.$q.'";';
 	$result = $conn->query($sql);
     $id;
 	if($result->num_rows>0){
@@ -34,7 +34,7 @@
     echo '<script>resetReviews();</script>';
 
     //Sets the name, picture, number, and email
-	$sql = 'SELECT hWebID,dateReview,reviewStars,rAnonymous,rDetails FROM Review WHERE bWebID="'.$id.'"';
+	$sql = 'SELECT hWebID,dateReview,reviewStars,rAnonymous,rDetails FROM Review WHERE bWebID="'.$id.'";';
 	$result = $conn->query($sql);
 	if($result->num_rows>0){
 		while($row = $result->fetch_assoc()){
@@ -50,6 +50,16 @@
 		}
 	}else{
         echo '<script>noReviews();</script>';
+    }
+
+    //Sets the avg review score
+    $sql = 'SELECT avg(reviewStars) FROM Review WHERE bWebID="'.$id.'";';
+	$result = $conn->query($sql);
+	if($result->num_rows>0){
+		$avg = $result->fetch_assoc()["avg(reviewStars)"];
+        echo '<script>setAvg("'.$avg.'")';
+	}else{
+        echo '<script>resetAvg();</script>';
     }
 
     mysqli_close($conn);
