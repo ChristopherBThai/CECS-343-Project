@@ -110,7 +110,7 @@
                 <button class="formButton cancelbtn" style="background-color:#2020f4" type="button" onClick="removeInfo()">Contact</button>
             </div>
             <div class="container" >
-                <p style="font-size:150%;margin-bottom: 0px;"><b>Reviews</b></p>
+                <p id="reviewtitle" style="font-size:150%;margin-bottom: 0px;"><b>Reviews</b></p>
                 <hr>
                 <div id="reviews">
                 </div>
