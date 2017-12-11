@@ -44,9 +44,9 @@ CREATE TABLE Review
     reviewStars INT             NOT NULL,
     rAnonymous  VARCHAR(1),
     rDetails    VARCHAR(500),
+    CONSTRAINT  Reieve_PK PRIMARY KEY(hWebID, bWebID, dateReview),  
     CONSTRAINT  Review_Home_FK FOREIGN KEY(hWebID) REFERENCES Homeowner(hWebID),
-    CONSTRAINT  Review_Business_FK FOREIGN KEY(bWebID, typeName) REFERENCES BusinessType(bWebID, typeName),
-    CONSTRAINT  Reieve_PK PRIMARY KEY(dateReview)  
+    CONSTRAINT  Review_Business_FK FOREIGN KEY(bWebID, typeName) REFERENCES BusinessType(bWebID, typeName)
 );
 
 

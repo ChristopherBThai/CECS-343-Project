@@ -8,7 +8,8 @@
 	
 	echo '<script>console.log("Connection success!")</script>';
     //Search based off of every word
-	$sql = "SELECT DISTINCT bName,typeName,bWebID FROM Business NATURAL JOIN BusinessType WHERE INSTR('{$q}', bName)>0 OR INSTR('{$q}', typeName)>0 OR bName LIKE '%{$q}%' OR typeName LIKE '%{$q}%'";			
+	$sql = "SELECT DISTINCT bName,typeName,bWebID FROM Business NATURAL JOIN BusinessType 
+			WHERE INSTR('{$q}', bName)>0 OR INSTR('{$q}', typeName)>0 OR bName LIKE '%{$q}%' OR typeName LIKE '%{$q}%'";			
 	$result = $conn->query($sql);
 
 	if($result->num_rows>0){

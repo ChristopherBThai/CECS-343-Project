@@ -43,9 +43,9 @@
 		}
         
         //Sets the avg review score
-        $sql = 'SELECT avg(reviewStars) FROM Review WHERE bWebID="'.$id.'";';
+        $sql = 'SELECT format(avg(reviewStars), 1) FROM Review WHERE bWebID="'.$id.'";';
 	    $result = $conn->query($sql);
-		$avg = $result->fetch_assoc()["avg(reviewStars)"];
+		$avg = $result->fetch_assoc()["format(avg(reviewStars), 1)"];
         echo '<script>setAvg("'.$avg.'")</script>';
 	}else{
         //If no reviews, display that
