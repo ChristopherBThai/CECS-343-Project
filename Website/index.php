@@ -106,8 +106,9 @@
 				<p><b>E-mail: </b><a id="infoEmail" href="#" >example@gmail.com</a></p>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
+		<input type="text" id="reviewinput" class="reviewtext"></input>
+                <button id="reviewbutton" class="formButton reviewbtn" type="button" onClick="removeInfo()">Write Review</button>
                 <button id="infocancel" class="formButton cancelbtn" type="button" onClick="removeInfo()">Close</button>
-                <button class="formButton cancelbtn" style="background-color:#2020f4" type="button" onClick="removeInfo()">Contact</button>
             </div>
             <div class="container" >
                 <p id="reviewtitle" style="font-size:150%;margin-bottom: 0px;"><b>Reviews</b></p>

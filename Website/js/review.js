@@ -24,3 +24,15 @@ function setAvg(avg){
 function resetAvg(){
     document.getElementById("reviewtitle").innerHTML = "<b>Reviews</b>";
 }
+
+function createReviewBox(){
+
+}
+
+function resetReviewBox(){
+
+}
+
+function submitReview(){
+
+}

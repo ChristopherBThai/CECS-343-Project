@@ -224,4 +224,17 @@ span.psw {
 }
 
 /* =================== Reviews =================== */
+.reviewbtn{
+    width: auto;
+    padding: 10px 18px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #2020f4;
+    float: right;
+}
+
+.reviewtext{
+    height: 100px;
+    width: 100%;
+}
 
