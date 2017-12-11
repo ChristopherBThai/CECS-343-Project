@@ -54,6 +54,7 @@
         }
             
         msg("Success!");
+	alert("Successfully created your account!");
         unset($_POST);
     }
     unset($_POST);
