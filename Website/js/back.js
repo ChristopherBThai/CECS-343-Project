@@ -152,6 +152,7 @@ function setPopupClose(){
 		document.getElementById('info').style.display = 'none';
     	document.getElementById('blurable').className = "unblur"; 
 	});
+	resetReviewBox();
 }
 
 /* Makes the login/signup button run away since we did not implement it yet */
