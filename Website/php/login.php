@@ -22,6 +22,8 @@
             unset($_POST);
             unset($_SESSION['uname']);
             unset($_SESSION['psw']);
+			mysqli_close($lresult);
+			unset($lresult);
             error('Your username or password is incorrect.');
 		}else{
 			//Logged in
