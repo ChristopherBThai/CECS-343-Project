@@ -26,11 +26,17 @@ function resetAvg(){
 }
 
 function createReviewBox(){
-
+    text = document.getElementbyID("reviewtext");
+    button = document.getElementbyID("reviewbutton");
+    text.setAttritube("class","reviewtext reviewtext_animate");
+    button.setAttribute("class","formButton reviewbtn reviewbtn_animate");
 }
 
 function resetReviewBox(){
-
+    text = document.getElementbyID("reviewtext");
+    button = document.getElementbyID("reviewbutton");
+    text.setAttritube("class","reviewtext");
+    button.setAttribute("class","formButton reviewbtn");
 }
 
 function submitReview(){

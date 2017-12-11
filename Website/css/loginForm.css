@@ -234,7 +234,39 @@ span.psw {
 }
 
 .reviewtext{
-    height: 100px;
+    opacity: 0;
+    height: 0px;
     width: 100%;
 }
 
+.reviewbtn_animate{
+	animation-name: show_review;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	position: relative;
+}
+
+.reviewtext_animate{
+	animation-name: change_review_btn;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	position: relative;
+}
+
+@keyframes show_review{
+	from{
+		opacity: 0;
+		height: 0px;
+	}to{
+		opacity: 1;
+		height: 100px;
+	}
+}
+
+@keyframes change_review_btn{
+	from{
+    	    background-color: #2020f4;
+	}to{
+    	    background-color: #04f21c;
+	}
+}
