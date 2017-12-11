@@ -240,14 +240,14 @@ span.psw {
 }
 
 .reviewbtn_animate{
-	animation-name: show_review;
+	animation-name: change_review_btn;
 	animation-duration: .5s;
 	animation-fill-mode: forwards;
 	position: relative;
 }
 
 .reviewtext_animate{
-	animation-name: change_review_btn;
+	animation-name: show_review;
 	animation-duration: .5s;
 	animation-fill-mode: forwards;
 	position: relative;
