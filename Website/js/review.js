@@ -31,6 +31,7 @@ function createReviewBox(){
     text.setAttribute("class","reviewtext reviewtext_animate");
     button.setAttribute("class","formButton reviewbtn reviewbtn_animate");
     button.setAttribute("onClick","submitReview();");
+    button.innerHTML="Submit Review";
 }
 
 function resetReviewBox(){
@@ -39,6 +40,7 @@ function resetReviewBox(){
     text.setAttribute("class","reviewtext");
     button.setAttribute("class","formButton reviewbtn");
     button.setAttribute("onClick","createReviewBox();");
+    button.innerHTML="Write Review";
 }
 
 function submitReview(){
