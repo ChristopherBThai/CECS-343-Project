@@ -209,5 +209,5 @@ function reloadPage(){
 }
 
 function welcome(name){
-    document.getElementById('buttons').innerHTML = "<p>Welcome back, "+name+"!</p><form action='/index.php' method='get'><button type='submit' name='logout' value='logout'>Log in</button></form>"
+    document.getElementById('buttons').innerHTML = "<p>Welcome back, "+name+"!</p><form action='/index.php' method='get'><button type='submit' name='logout' value='logout'>Log out</button></form>"
 }

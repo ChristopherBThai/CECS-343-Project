@@ -1,7 +1,7 @@
 <?php
     $uname = isset($_POST['suname']) ? $_POST['suname'] : $_SESSION['uname'];
     $psw = isset($_POST['spsw']) ? $_POST['spsw'] : $_SESSION['psw'];
-	if(isset($_SESSION['logout'])){
+	if(isset($_GET['logout'])){
 		//Logs user out
 		logout();
 	}else if(!isset($uname)){
