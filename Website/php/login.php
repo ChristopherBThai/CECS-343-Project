@@ -1,7 +1,10 @@
 <?php
     $uname = isset($_POST['suname']) ? $_POST['suname'] : $_SESSION['uname'];
     $psw = isset($_POST['spsw']) ? $_POST['spsw'] : $_SESSION['psw'];
-    if(!isset($uname)){
+	if(isset($_SESSION['logout'])){
+		//Logs user out
+		logout();
+	}else if(!isset($uname)){
         //Not signed in
         msg("'$uname'");
     }else{
@@ -43,4 +46,10 @@
 			}
 		}
     }
+
+	function logout(){
+		$_SESSION = array();
+		session_destroy();
+		session_start();
+	}
 ?>

@@ -209,5 +209,5 @@ function reloadPage(){
 }
 
 function welcome(name){
-    document.getElementById('buttons').innerHTML = "<p>Welcome back, "+name+"!</p>";
+    document.getElementById('buttons').innerHTML = "<p>Welcome back, "+name+"!</p><form action='<?=$_SERVER['PHP_SELF']?>' method='get'><button type='submit' name='logout' value='logout'>Log in</button></form>"
 }
