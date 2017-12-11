@@ -58,6 +58,7 @@ function eraseBar(){
 
 /* Calls info.php and display the business' info */
 function showInfo(ele){
+	resetReviewBox();
 
 	//Sends AJAX request
 	if(window.XMLHttpRequest){
@@ -152,7 +153,6 @@ function setPopupClose(){
 		document.getElementById('info').style.display = 'none';
     	document.getElementById('blurable').className = "unblur"; 
 	});
-	resetReviewBox();
 }
 
 /* Makes the login/signup button run away since we did not implement it yet */
