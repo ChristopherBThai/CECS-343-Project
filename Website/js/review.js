@@ -48,5 +48,26 @@ function resetReviewBox(){
 }
 
 function submitReview(){
+	text = document.getElementById("reviewtext").value;
+	stars = document.getElementById("starnum").value;
+	console.log(text);
+	console.log(stars);
 
+	//Sends AJAX request
+	if(window.XMLHttpRequest){
+		//For IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp = new XMLHttpRequest();
+	}else{
+		//For IE6, IE4
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+	xmlhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			$('#phpScripts').append(xmlhttp.responseText);
+		}
+	};
+
+	xmlhttp.open("GET","php/search.php?q="+ele.value,true);
+	xmlhttp.send();
 }
