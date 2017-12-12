@@ -28,6 +28,8 @@ function resetAvg(){
 function createReviewBox(){
     text = document.getElementById("reviewtext");
     button = document.getElementById("reviewbutton");
+    star = document.getElementById("starrating");
+    star.setAttribute("class","starrating starrating_animate");
     text.setAttribute("class","reviewtext reviewtext_animate");
     button.setAttribute("class","formButton reviewbtn reviewbtn_animate");
     button.setAttribute("onClick","submitReview();");
@@ -37,6 +39,8 @@ function createReviewBox(){
 function resetReviewBox(){
     text = document.getElementById("reviewtext");
     button = document.getElementById("reviewbutton");
+    star = document.getElementById("starrating");
+    star.setAttribute("class","starrating");
     text.setAttribute("class","reviewtext");
     button.setAttribute("class","formButton reviewbtn");
     button.setAttribute("onClick","createReviewBox();");

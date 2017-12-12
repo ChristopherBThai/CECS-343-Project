@@ -236,6 +236,8 @@ span.psw {
 .reviewtext{
     opacity: 0;
     height: 0px;
+    width: 100%;
+    resize: none;
 }
 
 .reviewbtn_animate{
@@ -345,4 +347,21 @@ form .stars span {
 .starrating {
    opacity: 0;
    height: 0px;
+}
+
+.starrating_animate{
+	animation-name: show_star;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	position: relative;
+}
+
+@keyframes show_star{
+	from{
+		opacity: 0;
+		height: 0px;
+	}to{
+		opacity: 1;
+		height: 30px;
+	}
 }
