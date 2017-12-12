@@ -50,15 +50,15 @@ function resetReviewBox(){
 function submitReview(){
 	text = document.getElementById("reviewtext").value;
 	stars = "";
-	if(document.getElementById("star-1").value=="on"){
+	if(document.getElementById("star-1").checked){
 		stars = 1;
-	}else if(document.getElementById("star-2").checked=="on"){
+	}else if(document.getElementById("star-2").checked){
 		stars = 2;
-	}else if(document.getElementById("star-3").checked=="on"){
+	}else if(document.getElementById("star-3").checked){
 		stars = 3;
-	}else if(document.getElementById("star-4").checked=="on"){
+	}else if(document.getElementById("star-4").checked){
 		stars = 4;
-	}else if(document.getElementById("star-5").checked=="on"){
+	}else if(document.getElementById("star-5").checked){
 		stars = 5;
 	}else{
 		return;
