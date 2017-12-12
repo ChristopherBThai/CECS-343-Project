@@ -52,13 +52,13 @@ function submitReview(){
 	stars = "";
 	if(document.getElementById("star-1").value=="on"){
 		stars = 1;
-	}else if(document.getElementById("star-2").value=="on"){
+	}else if(document.getElementById("star-2").checked=="on"){
 		stars = 2;
-	}else if(document.getElementById("star-3").value=="on"){
+	}else if(document.getElementById("star-3").checked=="on"){
 		stars = 3;
-	}else if(document.getElementById("star-4").value=="on"){
+	}else if(document.getElementById("star-4").checked=="on"){
 		stars = 4;
-	}else if(document.getElementById("star-5").value=="on"){
+	}else if(document.getElementById("star-5").checked=="on"){
 		stars = 5;
 	}else{
 		return;
