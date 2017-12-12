@@ -95,7 +95,7 @@
     </div>
 
     <div id="info" class="modal" >
-        <span onclick="removeInfo()" class="close" title="Close Modal">&times;</span>
+        <span id="infocancel" onclick="removeInfo()" class="close" title="Close Modal">&times;</span>
 		<form class="modal-content animate" id="infoform" style="width: 60%;">
             <div id="infoLoc" class="container">
 				<p>
@@ -123,7 +123,8 @@
 			</div>
 		</div>
                 <button id="reviewbutton" class="formButton reviewbtn" type="button" onClick="createReviewBox()">Write Review</button>
-                <button id="infocancel" class="formButton cancelbtn" type="button" onClick="removeInfo()">Close</button>
+		<br>
+		<br>
             </div>
             <div class="container" >
                 <p id="reviewtitle" style="font-size:150%;margin-bottom: 0px;"><b>Reviews</b></p>
