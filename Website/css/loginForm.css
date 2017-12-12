@@ -347,9 +347,11 @@ form .stars span {
 .starrating {
    opacity: 0;
    height: 0px;
+   display: none;
 }
 
 .starrating_animate{
+	display: block;
 	animation-name: show_star;
 	animation-duration: .5s;
 	animation-fill-mode: forwards;
@@ -358,9 +360,11 @@ form .stars span {
 
 @keyframes show_star{
 	from{
+		display: block;
 		opacity: 0;
 		height: 0px;
 	}to{
+		display: block;
 		opacity: 1;
 		height: 30px;
 	}
