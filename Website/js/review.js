@@ -49,7 +49,20 @@ function resetReviewBox(){
 
 function submitReview(){
 	text = document.getElementById("reviewtext").value;
-	stars = document.getElementById("starnum").value;
+	stars = "";
+	if(document.getElementById("star-1").value=="on"){
+		stars = 1;
+	}else if(document.getElementById("star-2").value=="on"){
+		stars = 2;
+	}else if(document.getElementById("star-3").value=="on"){
+		stars = 3;
+	}else if(document.getElementById("star-4").value=="on"){
+		stars = 4;
+	}else if(document.getElementById("star-5").value=="on"){
+		stars = 5;
+	}else{
+		return;
+	}
 	console.log(text);
 	console.log(stars);
 
