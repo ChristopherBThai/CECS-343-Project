@@ -81,6 +81,6 @@ function submitReview(){
 		}
 	};
 
-	xmlhttp.open("GET","php/search.php?q="+ele.value,true);
-	xmlhttp.send();
+	xmlhttp.open("GET","php/insertreview.php",true);
+	xmlhttp.send("review="+text+"&star="+stars);
 }
