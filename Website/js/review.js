@@ -63,8 +63,12 @@ function submitReview(){
 	}else{
 		return;
 	}
+	bName = document.getElementById("infoName").innerHTML;
+	console.log(bName);
 	console.log(text);
 	console.log(stars);
+
+
 
 	//Sends AJAX request
 	if(window.XMLHttpRequest){
@@ -81,6 +85,7 @@ function submitReview(){
 		}
 	};
 
-	xmlhttp.open("GET","php/insertreview.php",true);
-	xmlhttp.send("review="+text+"&star="+stars);
+	xmlhttp.open("POST","php/insertreview.php",true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send("review="+text+"&star="+stars+"&bid="+bName);
 }

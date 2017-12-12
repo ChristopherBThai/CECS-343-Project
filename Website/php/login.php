@@ -36,6 +36,7 @@
 			$sql = "SELECT hName FROM Homeowner WHERE hWebID = '$id'";
 			$lresult = $db->query($sql);
 			if($lresult){
+				msg("logged in");
 				//Display welcome
 				//welcome($lresult->fetch_assoc()["hName"]);
 			}else{
