@@ -107,8 +107,8 @@
             </div> 
             <div class="container" style="background-color:#f1f1f1">
 		<div id="reviewtext" class="reviewtext">
-			<textarea type="text" id="reviewtextinput" style="resize:none;"></textarea>
-			<div id="ratingsForm" class="starrating">
+			<textarea type="text" id="reviewtextinput" style="width:100%;resize:none;"></textarea>
+			<div id="ratingsForm">
 				<div class="stars">
 					<input type="radio" name="star" class="star-1" id="star-1" />
 					<label class="star-1" for="star-1">1</label>
