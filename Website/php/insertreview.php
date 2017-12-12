@@ -7,14 +7,14 @@
 
 	$conn = dbConnect("eHandy");
 	
-        $sql = "INSERT INTO Review SET
-		hWebID = '$hID',
-		bWebId = '$bID', 
-		typeName = '$type',
-		datereview = CURRENT_TIMESTAMP,
-		rAnonymous = 'y',
-		reviewStars = '$star',
-		rDetails = '$review'";
+       // $sql = "INSERT INTO Review SET
+//		hWebID = '$hID',
+//		bWebId = '$bID', 
+//		typeName = '$type',
+//		datereview = CURRENT_TIMESTAMP,
+//		rAnonymous = 'y',
+//		reviewStars = '$star',
+//		rDetails = '$review'";
 		
 	//$result = $conn->query($sql);
 
