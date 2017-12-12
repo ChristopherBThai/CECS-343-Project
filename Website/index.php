@@ -108,7 +108,7 @@
             <div class="container" style="background-color:#f1f1f1">
 		<textarea type="text" id="reviewtext" class="reviewtext" ></textarea>
 		<div id="ratingsForm">
-			<div id="starrating" class="starrating">
+			<div id="starrating" class="stars starrating">
 				<input type="radio" name="star" class="star-1" id="star-1" />
 				<label class="star-1" for="star-1">1</label>
 				<input type="radio" name="star" class="star-2" id="star-2" />
