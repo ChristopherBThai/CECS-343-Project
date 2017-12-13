@@ -95,7 +95,7 @@
     </div>
 
     <div id="info" class="modal" >
-        <span onclick="removeInfo()" class="close" title="Close Modal">&times;</span>
+        <span id="infocancel" onclick="removeInfo()" class="close" title="Close Modal">&times;</span>
 		<form class="modal-content animate" id="infoform" style="width: 60%;">
             <div id="infoLoc" class="container">
 				<p>
@@ -106,8 +106,25 @@
 				<p><b>E-mail: </b><a id="infoEmail" href="#" >example@gmail.com</a></p>
             </div> 
             <div class="container" style="background-color:#f1f1f1">
-                <button id="infocancel" class="formButton cancelbtn" type="button" onClick="removeInfo()">Close</button>
-                <button class="formButton cancelbtn" style="background-color:#2020f4" type="button" onClick="removeInfo()">Contact</button>
+		<textarea type="text" id="reviewtext" class="reviewtext" ></textarea>
+		<div id="ratingsForm">
+			<div id="starrating" class="stars starrating">
+				<input type="radio" name="star" class="star-1" id="star-1" />
+				<label class="star-1" for="star-1">1</label>
+				<input type="radio" name="star" class="star-2" id="star-2" />
+				<label class="star-2" for="star-2">2</label>
+				<input type="radio" name="star" class="star-3" id="star-3" />
+				<label class="star-3" for="star-3">3</label>
+				<input type="radio" name="star" class="star-4" id="star-4" />
+				<label class="star-4" for="star-4">4</label>
+				<input type="radio" name="star" class="star-5" id="star-5" />
+				<label class="star-5" for="star-5">5</label>
+				<span></span>
+			</div>
+		</div>
+                <button id="reviewbutton" class="formButton reviewbtn" type="button" onClick="createReviewBox()">Write Review</button>
+		<br>
+		<br>
             </div>
             <div class="container" >
                 <p id="reviewtitle" style="font-size:150%;margin-bottom: 0px;"><b>Reviews</b></p>
