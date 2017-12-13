@@ -2,8 +2,10 @@
     //php that gets a business' info based off their name
     include_once 'helper/common.php';
     include_once 'helper/db.php';
-
-    $q = $_GET["q"];
+    
+    if(!isset($bName)){
+        $q = $_GET["q"];
+    }
     
 	$conn = dbConnect("eHandy");
 	

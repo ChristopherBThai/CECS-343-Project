@@ -49,6 +49,7 @@
 	msg("Inserting to sql");
 	$result = $conn->query($sql);
 
+    $q = $bName;
     include 'info.php';
 
     mysqli_close($conn);
