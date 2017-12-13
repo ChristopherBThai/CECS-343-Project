@@ -231,6 +231,7 @@ span.psw {
     margin-right: 0px;
     background-color: #2020f4;
     float: right;
+    display: none;
 }
 
 .reviewtext{
@@ -256,9 +257,11 @@ span.psw {
 
 @keyframes show_review{
 	from{
+        display: block;
 		opacity: 0;
 		height: 0px;
 	}to{
+        display: block;
 		opacity: 1;
 		height: 100px;
 	}

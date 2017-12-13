@@ -21,6 +21,7 @@
                 $formatNum = '+1 ('.substr($pNum, 0, 3).') '.substr($pNum, 3, 3).'-'.substr($pNum, 6, 4);
                 //Creates a javascript to change the info popup
                 echo '<script>setInfo("'.$q.'","'.$formatNum.'","'.$row["bEmail"].'","'.$row["bAddress"].'","'.$id.'");</script>';
+                echo '<script>resetReviews();</script>';
             }
         }
     }else{
@@ -32,11 +33,10 @@
                 $id = $row["bWebID"];
                 //Creates a javascript to change the info popup
                 echo '<script>setInfoBlurred("'.$q.'","'.$id.'");</script>';
+                echo '<script>disableReviewButton()</script>'
             }
         }
     }
-
-    echo '<script>resetReviews();</script>';
 
     //Sets the name, picture, number, and email
 	$sql = 'SELECT hWebID,dateReview,reviewStars,rAnonymous,rDetails FROM Review WHERE bWebID="'.$id.'";';

@@ -30,6 +30,14 @@ function resetAvg(){
     document.getElementById("reviewtitle").innerHTML = "<b>Reviews</b>";
 }
 
+function disableReviewButton(){
+    button = document.getElementById("reviewbutton");
+    button.setAttribute("onClick","");
+    button.setAttribute("style","background-color: #f44336;");
+    button.innerHTML="Login to Review";
+    
+}
+
 function createReviewBox(){
     text = document.getElementById("reviewtext");
     button = document.getElementById("reviewbutton");

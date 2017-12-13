@@ -122,7 +122,7 @@
 				<span></span>
 			</div>
 		</div>
-                <button id="reviewbutton" class="formButton reviewbtn" type="button" onClick="createReviewBox()">Write Review</button>
+                <button id="reviewbutton" class="formButton reviewbtn" type="button" onClick="createReviewBox()" style="margin-top:0px">Write Review</button>
 		<br>
 		<br>
             </div>
