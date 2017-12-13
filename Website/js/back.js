@@ -58,6 +58,7 @@ function eraseBar(){
 
 /* Calls info.php and display the business' info */
 function showInfo(ele){
+	resetReviewBox();
 
 	//Sends AJAX request
 	if(window.XMLHttpRequest){
@@ -209,5 +210,5 @@ function reloadPage(){
 }
 
 function welcome(name){
-    document.getElementById('buttons').innerHTML = "<p>Welcome back, "+name+"!</p>";
+    document.getElementById('buttons').innerHTML = "<p>Welcome back, "+name+"!</p><form style='border:0px;' action='/index.php' method='get'><button type='submit' name='logout' value='logout'>Log out</button></form>"
 }

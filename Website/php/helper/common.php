@@ -38,4 +38,17 @@
             <body></body>
         </html>
     <?php }
+
+    function alert($msg){?>
+        <html>
+            <head>
+                <script language="JavaScript">
+                    <!--
+                        alert("<?=$msg?>");
+                    //-->
+                </script>
+            </head>
+            <body></body>
+        </html>
+    <?php }
 ?>
