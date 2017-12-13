@@ -21,12 +21,12 @@
         msg("Checking if logged in...");
         $sql = "SELECT COUNT(*) FROM User WHERE user = '$_SESSION[uname]' AND psw = PASSWORD('$_SESSION[psw]')";
         $result = $conn->query($sql);
-	    if($result->num_rows==0){
-            msg("Not logged in")
+	    if($result["COUNT(*)"]==0){
+            msg("Not logged in");
 		    return false;
 	    }
         msg("Logged in!");
-        return false
+        return true;
     }
     
 ?>
