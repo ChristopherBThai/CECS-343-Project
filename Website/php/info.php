@@ -11,7 +11,7 @@
     $id;
     if(loggedIn()){
         //Sets the name, picture, number, and email
-        $sql = 'SELECT bPhoneNum,bEmail,bWebID FROM Business WHERE bName = "'.$q.'";';
+        $sql = 'SELECT bPhoneNum,bEmail,bWebID,bAddress FROM Business WHERE bName = "'.$q.'";';
         $result = $conn->query($sql);
         if($result->num_rows>0){
             while($row = $result->fetch_assoc()){
