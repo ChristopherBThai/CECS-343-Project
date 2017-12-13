@@ -33,7 +33,7 @@ function resetAvg(){
 function disableReviewButton(){
     button = document.getElementById("reviewbutton");
     button.setAttribute("onClick","");
-    button.setAttribute("style","background-color: #f44336;");
+    button.setAttribute("style","background-color: #f44336;margin-top:0px;");
     button.innerHTML="Login to Review";
     
 }

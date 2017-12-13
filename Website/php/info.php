@@ -33,13 +33,13 @@
                 $id = $row["bWebID"];
                 //Creates a javascript to change the info popup
                 echo '<script>setInfoBlurred("'.$q.'","'.$id.'");</script>';
-                echo '<script>disableReviewButton()</script>'
+                echo '<script>disableReviewButton()</script>';
             }
         }
     }
 
     //Sets the name, picture, number, and email
-	$sql = 'SELECT hWebID,dateReview,reviewStars,rAnonymous,rDetails FROM Review WHERE bWebID="'.$id.'";';
+	$sql = 'SELECT hWebID,dateReview,reviewStars,rAnonymous,rDetails FROM Review WHERE bWebID="'.$id.'" ORDER BY dateReview DESC;';
 	$result = $conn->query($sql);
 	if($result->num_rows>0){
         
