@@ -48,7 +48,7 @@
         //Loops through all the reviews and displays them
 		while($row = $result->fetch_assoc()){
             $name;
-            if($row["rAnonymous"]=='y'){
+            if($row["rAnonymous"]=='n'){
                 $sql = 'SELECT hName FROM Homeowner WHERE hWebID = "'.$row["hWebID"].'"';
                 $nResult = $conn->query($sql);
                 $name = $nResult->fetch_assoc()["hName"];
