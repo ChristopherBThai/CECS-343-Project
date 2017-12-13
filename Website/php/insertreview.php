@@ -45,7 +45,7 @@
 		rDetails = '$review'";
 	
 	$sql = "INSERT INTO Review(hWebID,bWebID,typeName,dateReview,reviewStars,rAnonymous,rDetails) VALUES (
-		'$hID','$bID','$type',CURRENT_TIMESTAMP,'$star','y','$review');";
+		'$hID','$bID','$type',CURRENT_TIMESTAMP,'$star','$anon','$review');";
 		
 	msg("Inserting to sql");
 	$result = $conn->query($sql);
