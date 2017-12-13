@@ -24,8 +24,8 @@
         <!-- Login Buttons -->
         <div class="btn-padding">
             <div id="buttons" class="btn-group">
-                <button onClick="showLogin()">Log in</button>
-                <button onClick="showSignup()">Sign up</button>
+                <button onClick="showLogin()"><b>Log in</b></button>
+                <button onClick="showSignup()"><b>Sign up</b></button>
             </div>
         </div>
 
@@ -122,6 +122,8 @@
 				<span></span>
 			</div>
 		</div>
+                <b id="anontext" class="">Anonymously?</b>
+                <input type="checkbox" id="anonbox" class="">
                 <button id="reviewbutton" class="formButton reviewbtn" type="button" onClick="createReviewBox()" style="margin-top:0px">Write Review</button>
 		<br>
 		<br>

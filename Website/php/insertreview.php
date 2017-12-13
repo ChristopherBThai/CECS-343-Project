@@ -22,7 +22,8 @@
 	
 	$review = $_POST["review"];
 	$star = $_POST["star"];
-	$bName= $_POST["bid"];
+	$bName = $_POST["bid"];
+    $anon = $_POST["anon"];
 
 	$sql = "SELECT bWebID,typeName FROM Business NATURAL JOIN BusinessType WHERE bName = '$bName'";
 
@@ -39,7 +40,7 @@
 		bWebID = '$bID', 
 		typeName = '$type',
 		dateReview = CURRENT_TIMESTAMP,
-		rAnonymous = 'n',
+		rAnonymous = '$anon',
 		reviewStars = '$star',
 		rDetails = '$review'";
 	

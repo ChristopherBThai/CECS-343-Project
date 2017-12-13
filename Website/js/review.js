@@ -14,7 +14,7 @@ function resetReviews(){
 }
 
 function setInfo(name,num,mail,addr,id){
-    document.getElementById("infoLoc").innerHTML = "<p><img src='pictures/"+id+".jpg' class='infoimage'><br><b id='infoName' style='font-size:150%;'>"+name+"</b></p><p><b>Phone Number: </b><a id='infoPhone' href='#' >"+num+"</a></p><p><b>E-mail: </b><a id='infoEmail' href='#' >"+mail+"</a></p><p><b>E-mail: </b><a id='infoAddr' href='#'>"+addr+"</a></p><br>";
+    document.getElementById("infoLoc").innerHTML = "<p><img src='pictures/"+id+".jpg' class='infoimage'><br><b id='infoName' style='font-size:150%;'>"+name+"</b></p><p><b>Phone Number: </b><a id='infoPhone' href='#' >"+num+"</a></p><p><b>E-mail: </b><a id='infoEmail' href='#' >"+mail+"</a></p><p><b>Address: </b><a id='infoAddr' href='#'>"+addr+"</a></p><br>";
 }
 
 function setInfoBlurred(name,id){
@@ -77,11 +77,13 @@ function submitReview(){
 		return;
 	}
 	bName = document.getElementById("infoName").innerHTML;
+    anon = "n";
+    if(document.getElementById("anonbox").checked){
+        anon = "y";
+    }
 	console.log(bName);
 	console.log(text);
 	console.log(stars);
-
-
 
 	//Sends AJAX request
 	if(window.XMLHttpRequest){
@@ -100,5 +102,5 @@ function submitReview(){
 
 	xmlhttp.open("POST","php/insertreview.php",true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttp.send("review="+text+"&star="+stars+"&bid="+bName);
+	xmlhttp.send("review="+text+"&star="+stars+"&bid="+bName+"&anon="+anon);
 }
