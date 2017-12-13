@@ -13,12 +13,12 @@ function resetReviews(){
     document.getElementById("reviews").innerHTML="";
 }
 
-function setInfo(name,num,mail,id){
-    document.getElementById("infoLoc").innerHTML = "<p><img src='pictures/"+id+".jpg' class='infoimage'><br><b id='infoName' style='font-size:150%;'>"+name+"</b></p><p><b>Phone Number: </b><a id='infoPhone' href='#' >"+num+"</a></p><p><b>E-mail: </b><a id='infoEmail' href='#' >"+mail+"</a></p><br>";
+function setInfo(name,num,mail,addr,id){
+    document.getElementById("infoLoc").innerHTML = "<p><img src='pictures/"+id+".jpg' class='infoimage'><br><b id='infoName' style='font-size:150%;'>"+name+"</b></p><p><b>Phone Number: </b><a id='infoPhone' href='#' >"+num+"</a></p><p><b>E-mail: </b><a id='infoEmail' href='#' >"+mail+"</a></p><p><b>E-mail: </b><a id='infoAddr' href='#'>"+addr+"</a></p><br>";
 }
 
 function setInfo(name,id){
-    document.getElementById("infoLoc").innerHTML = "<p><img src='pictures/"+id+".jpg' class='infoimage'><br><b id='infoName' style='font-size:150%;'>"+name+"</b></p><p><b>Phone Number: </b><a id='infoPhone' class='blur' href='#' >123-456-7910</a></p><p><b>E-mail: </b><a id='infoEmail' class='blur' href='#' >example@email.com</a></p><br>";
+    document.getElementById("infoLoc").innerHTML = "<p><img src='pictures/"+id+".jpg' class='infoimage'><br><b id='infoName' style='font-size:150%;'>"+name+"</b></p><p><b>Phone Number: </b><a id='infoPhone' class='blur' href='#' >123-456-7910</a></p><p><b>E-mail: </b><a id='infoEmail' class='blur' href='#' >example@email.com</a></p><p><b>E-mail: </b><a id='infoAddr' href='#'>123 SomeStreet</a></p><br>";
     
 }
 

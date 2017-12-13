@@ -7,6 +7,7 @@
     
 	$conn = dbConnect("eHandy");
 	
+    session_start();
     $id;
     if(loggedIn()){
         //Sets the name, picture, number, and email
@@ -19,7 +20,7 @@
                 $pNum = $row["bPhoneNum"];
                 $formatNum = '+1 ('.substr($pNum, 0, 3).') '.substr($pNum, 3, 3).'-'.substr($pNum, 6, 4);
                 //Creates a javascript to change the info popup
-                echo '<script>setInfo("'.$q.'","'.$formatNum.'","'.$row["bEmail"].'","'.$id.'");</script>';
+                echo '<script>setInfo("'.$q.'","'.$formatNum.'","'.$row["bEmail"].'","'.$row["bAddress"].'","'.$id.'");</script>';
             }
         }
     }else{
@@ -30,7 +31,7 @@
             while($row = $result->fetch_assoc()){
                 $id = $row["bWebID"];
                 //Creates a javascript to change the info popup
-                echo '<script>setInfo("'.$q.'","'.$id.'");</script>';
+                echo '<script>setInfoBlurred("'.$q.'","'.$id.'");</script>';
             }
         }
     }
