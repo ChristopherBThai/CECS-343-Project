@@ -7,20 +7,33 @@
     
 	$conn = dbConnect("eHandy");
 	
-    //Sets the name, picture, number, and email
-	$sql = 'SELECT bPhoneNum,bEmail,bWebID FROM Business WHERE bName = "'.$q.'";';
-	$result = $conn->query($sql);
     $id;
-	if($result->num_rows>0){
-		while($row = $result->fetch_assoc()){
-            $id = $row["bWebID"];
-            //Formats phone number         
-			$pNum = $row["bPhoneNum"];
-			$formatNum = '+1 ('.substr($pNum, 0, 3).') '.substr($pNum, 3, 3).'-'.substr($pNum, 6, 4);
-            //Creates a javascript to change the info popup
-			echo '<script>setInfo("'.$q.'","'.$formatNum.'","'.$row["bEmail"].'","'.$id.'");</script>';
-		}
-	}
+    if(loggedIn()){
+        //Sets the name, picture, number, and email
+        $sql = 'SELECT bPhoneNum,bEmail,bWebID FROM Business WHERE bName = "'.$q.'";';
+        $result = $conn->query($sql);
+        if($result->num_rows>0){
+            while($row = $result->fetch_assoc()){
+                $id = $row["bWebID"];
+                //Formats phone number         
+                $pNum = $row["bPhoneNum"];
+                $formatNum = '+1 ('.substr($pNum, 0, 3).') '.substr($pNum, 3, 3).'-'.substr($pNum, 6, 4);
+                //Creates a javascript to change the info popup
+                echo '<script>setInfo("'.$q.'","'.$formatNum.'","'.$row["bEmail"].'","'.$id.'");</script>';
+            }
+        }
+    }else{
+         //Sets the name, picture, number, and email
+        $sql = 'SELECT bWebID FROM Business WHERE bName = "'.$q.'";';
+        $result = $conn->query($sql);
+        if($result->num_rows>0){
+            while($row = $result->fetch_assoc()){
+                $id = $row["bWebID"];
+                //Creates a javascript to change the info popup
+                echo '<script>setInfo("'.$q.'","'.$id.'");</script>';
+            }
+        }
+    }
 
     echo '<script>resetReviews();</script>';
 
