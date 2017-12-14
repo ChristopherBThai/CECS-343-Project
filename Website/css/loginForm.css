@@ -375,11 +375,13 @@ form .stars span {
 .anon{
 	display: none;
 	opacity: 0;
+	float: left;
 }
 
 .anon_animate{
 	opacity: 0;
-	display: block;
+	display: none;
+	float: left;
 	animation-name: show_anon;
 	animation-duration: .5s;
 	animation-fill-mode: forwards;
