@@ -35,7 +35,6 @@ function disableReviewButton(){
     button.setAttribute("onClick","");
     button.setAttribute("style","background-color: #f44336;margin-top:0px;");
     button.innerHTML="Login to Review";
-    
 }
 
 function createReviewBox(){
@@ -47,6 +46,10 @@ function createReviewBox(){
     button.setAttribute("class","formButton reviewbtn reviewbtn_animate");
     button.setAttribute("onClick","submitReview();");
     button.innerHTML="Submit Review";
+    anontext = document.getElementById("anontext");
+    anonbox = document.getElementById("anonbox");
+    anontext.setAttribute("class", "anon_animate");
+    anonbox.setAttribute("class", "anon_animate");
 }
 
 function resetReviewBox(){
@@ -58,6 +61,10 @@ function resetReviewBox(){
     button.setAttribute("class","formButton reviewbtn");
     button.setAttribute("onClick","createReviewBox();");
     button.innerHTML="Write Review";
+    anontext = document.getElementById("anontext");
+    anonbox = document.getElementById("anonbox");
+    anontext.setAttribute("class", "anon");
+    anonbox.setAttribute("class", "anon");
 }
 
 function submitReview(){

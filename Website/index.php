@@ -122,8 +122,8 @@
 				<span></span>
 			</div>
 		</div>
-                <b id="anontext" class="">Anonymously?</b>
-                <input type="checkbox" id="anonbox" class="">
+                <b id="anontext" class="anon">Anonymously?</b>
+                <input type="checkbox" id="anonbox" class="anon">
                 <button id="reviewbutton" class="formButton reviewbtn" type="button" onClick="createReviewBox()" style="margin-top:0px">Write Review</button>
 		<br>
 		<br>
