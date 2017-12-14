@@ -380,7 +380,7 @@ form .stars span {
 
 .anon_animate{
 	opacity: 0;
-	display: none;
+	display: block;
 	float: left;
 	animation-name: show_anon;
 	animation-duration: .5s;
