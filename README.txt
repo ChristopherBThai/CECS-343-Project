@@ -12,8 +12,4 @@ Aingty		    aingtyeung@yahoo.com      	    562-735-7936
 
 
 
-Thanksgiving Week Break Goals
-
-- Fix the search function (ie. searching for existing bNames/bTypes fails) (eg. "Plumber" + "Blue" sequence fails to return result)
-- Add Electrician as bType somewhere (seems to be a popular category)
-
+WOOOOO!!!! We finished!!! Thank you to everyone involved!!!
