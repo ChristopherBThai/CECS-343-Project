@@ -15,5 +15,18 @@
 	    }
         return $dbcnx;
     }
+
+    function loggedIn(){
+        $db = dbConnect("eHandy");
+        msg("Checking if logged in...");
+        $sql = "SELECT COUNT(*) FROM User WHERE user = '$_SESSION[uname]' AND psw = PASSWORD('$_SESSION[psw]')";
+        $result = $db->query($sql);
+	    if($result->fetch_assoc()["COUNT(*)"]==0){
+            msg("Not logged in");
+		    return false;
+	    }
+        msg("Logged in!");
+        return true;
+    }
     
 ?>

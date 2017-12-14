@@ -256,9 +256,11 @@ span.psw {
 
 @keyframes show_review{
 	from{
+        display: block;
 		opacity: 0;
 		height: 0px;
 	}to{
+        display: block;
 		opacity: 1;
 		height: 100px;
 	}
@@ -367,5 +369,32 @@ form .stars span {
 		display: block;
 		opacity: 1;
 		height: 30px;
+	}
+}
+
+.anon{
+	display: none;
+	opacity: 0;
+	float: left;
+}
+
+.anon_animate{
+	opacity: 0;
+	display: block;
+	float: left;
+	animation-name: show_anon;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-delay: .35s;
+	position: relative;
+}
+
+@keyframes show_anon{
+	from{
+		display: block;
+		opacity: 0;
+	}to{
+		display: block;
+		opacity: 1;
 	}
 }
